@@ -3,148 +3,91 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cworks — Web Development &amp; Design Agency in Kampala, Uganda</title>
-
-  <link rel="icon" type="image/png" href="CodeHub.png"/>
-  <link rel="apple-touch-icon" href="CodeHub.png"/>
-
-  <meta name="description" content="Cworks is a Kampala-based web development and design agency. We build responsive websites, intuitive UI/UX interfaces, and bold brand identities for clients across Uganda and beyond."/>
-  <meta name="keywords" content="web development Uganda, web design Kampala, UI UX design Uganda, Cworks, website builder Kampala, graphic design Uganda, affordable websites Uganda"/>
+  <title>Cworks — Code Works | Kampala, Uganda</title>
+  <meta name="description" content="Cworks is a Kampala-based web development and design agency. We build responsive websites, intuitive UI/UX, bold brand identities, and custom systems for clients across Uganda and beyond."/>
   <meta name="author" content="Cworks — Code Works"/>
   <meta name="robots" content="index, follow"/>
-  <meta name="theme-color" content="#e07a5f"/>
-  <link rel="canonical" href="https://the-runner-team.github.io/website/"/>
-
   <meta name="geo.region" content="UG-C"/>
   <meta name="geo.placename" content="Kampala, Uganda"/>
-
-  <meta property="og:title" content="Cworks — Web Development &amp; Design Agency in Kampala, Uganda"/>
+  <meta property="og:title" content="Cworks — Code Works | Kampala, Uganda"/>
   <meta property="og:description" content="A Kampala-based team building responsive websites, sleek interfaces, and bold brand identities."/>
-  <meta property="og:url" content="https://the-runner-team.github.io/website/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Cworks"/>
-  <meta property="og:image" content="https://the-runner-team.github.io/website/CodeHub.png"/>
-  <meta property="og:locale" content="en_UG"/>
-
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Cworks — Web Development &amp; Design Agency in Kampala, Uganda"/>
-  <meta name="twitter:description" content="A Kampala-based team building responsive websites, sleek interfaces, and bold brand identities."/>
-  <meta name="twitter:image" content="https://the-runner-team.github.io/website/CodeHub.png"/>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Cworks",
-    "url": "https://the-runner-team.github.io/website/",
-    "logo": "https://the-runner-team.github.io/website/CodeHub.png",
-    "description": "Cworks (Code Works) is a Kampala-based web development and design agency.",
-    "telephone": "+256788368997",
-    "address": { "@type": "PostalAddress", "addressLocality": "Kampala", "addressCountry": "UG" },
-    "areaServed": ["Uganda", "East Africa"]
-  }
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="styles.css"/>
-
-  <style>
-    /* Page-specific overrides */
-    .team-grid--centered .team-card { flex: 0 1 calc(25% - 18px); min-width: 220px; }
-    .about-visual .tech-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    @media (max-width: 640px) { .about-visual .tech-list { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 900px) { .team-grid--centered .team-card { flex: 0 1 calc(50% - 12px); } }
-    @media (max-width: 420px) { .team-grid--centered .team-card { flex: 0 1 100%; } }
-  </style>
 </head>
-
 <body>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container nav-inner">
+    <div class="nav-inner">
       <a href="#hero" class="nav-logo" aria-label="Cworks home">
-        <span class="nav-logo-icon" aria-hidden="true">
-          <img src="CodeHub.png" alt="Cworks" class="nav-logo-img"/>
-        </span>
-        Cworks
+        <img src="Gemini_Generated_Image_h7g71sh7g71sh7g7.png" alt="Cworks" class="nav-logo-img" width="38" height="38"/>
       </a>
       <ul class="nav-links" role="list">
         <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#team"     class="nav-link">Team</a></li>
-        <li><a href="#projects" class="nav-link">Services</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
+        <li><a href="#contact"  class="nav-link cta-link">Hire Us</a></li>
       </ul>
-      <div class="nav-actions">
-        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#team"     class="nav-link">Team</a>
+      <a href="#contact"  class="nav-link">Hire Us</a>
     </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu" role="menu">
-    <a href="#about"    class="nav-link" role="menuitem">About</a>
-    <a href="#team"     class="nav-link" role="menuitem">Team</a>
-    <a href="#projects" class="nav-link" role="menuitem">Services</a>
-    <a href="#contact"  class="nav-link" role="menuitem">Contact</a>
-  </div>
-
-
   <!-- HERO -->
-  <section class="hero" id="hero" aria-label="Hero section">
-    <canvas id="antigravity-hero" aria-hidden="true"></canvas>
-    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+  <section class="hero" id="hero" aria-label="Hero">
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
 
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="hero-badge" aria-hidden="true">
-          <span class="hero-badge-dot"></span>
-          <span class="font-code">v2.0 — Built in Kampala 🇺🇬</span>
-        </div>
-
-        <!-- "Code Works" styled visual element -->
-        <div class="hero-codeworks" aria-hidden="true">
-          <div class="hero-codeworks-lines">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="gradient-text">C</span>works
-        </h1>
-
-        <p class="hero-subtitle">
-          <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span>
-        </p>
-
-        <p class="hero-description">
-          A team of developers building real things for real people —
-          websites, interfaces, systems, and more. We bring ideas to life
-          through clean code and honest collaboration.
-        </p>
-
-        <p class="hero-location">
-          <span aria-hidden="true">📍</span> Based in Kampala, Uganda &nbsp;·&nbsp; Proudly Ugandan 🇺🇬
-        </p>
-
-        <div class="hero-cta">
-          <a href="#team"     class="btn-primary">
-            <i class="fa-solid fa-users" aria-hidden="true"></i>
-            Meet the Team
-          </a>
-          <a href="#projects" class="btn-secondary">
-            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-            Our Services
-          </a>
-        </div>
-
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>Built in Kampala 🇺🇬</span>
+        <span class="eyebrow-dot"></span>
       </div>
+
+      <!-- LOGO as hero centerpiece -->
+      <div class="hero-logo-wrap" aria-label="Cworks">
+        <img src="Gemini_Generated_Image_h7g71sh7g71sh7g7.png" alt="Cworks logo" class="hero-logo-img"/>
+        <div class="hero-logo-glow" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-typing-row" aria-live="polite">
+        <span class="typing-label">We do</span>
+        <span class="typing-wrapper">
+          <span id="typing-text" aria-live="polite"></span><span class="cursor" aria-hidden="true">_</span>
+        </span>
+      </div>
+
+      <p class="hero-desc">
+        A team of developers building real things for real people —
+        websites, interfaces, systems, and more. We bring ideas to life
+        through clean code and honest collaboration.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Our Services <i class="fa-solid fa-arrow-right fa-sm"></i></a>
+        <a href="#team"     class="btn-ghost">Meet the Team</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
     </div>
   </section>
 
@@ -152,65 +95,155 @@
   <!-- ABOUT -->
   <section class="section about" id="about" aria-label="About Cworks">
     <div class="container">
+
+      <div class="section-label-row reveal">
+        <span class="section-chip">About Us</span>
+        <div class="chip-line"></div>
+      </div>
+
       <div class="about-grid">
-
-        <div class="about-text reveal">
-          <div class="section-header">
-            <span class="section-label">// about us</span>
-            <h2 class="section-title">We Build.<br/>We Ship.</h2>
-            <span class="accent-line" aria-hidden="true"></span>
-          </div>
-          <div class="about-body">
-            <p>
-              Cworks (Code Works) is a Ugandan team of developers delivering real digital solutions —
-              from building responsive websites and designing clean user interfaces to
-              automating workflows and building custom systems.
-            </p>
-            <p>
-              We began as a group of learners, and that spirit still defines
-              how we work: with honesty, teamwork, creativity,
-              and genuine care for every project we ship.
-            </p>
-            <p>
-              We understand the needs of local businesses, students, startups, and growing brands
-              because we come from the same environment. Whether you're running a small business in Kampala,
-              building a personal brand, or bringing a new idea to life — Cworks is the team to build it with you.
-            </p>
-            <p class="about-origin">
-              🇺🇬 Built in Uganda — from Kampala to the world.
-            </p>
-          </div>
+        <div class="about-headline reveal">
+          <h2>We Build.<br/>We Ship.<br/><span class="accent-text">We Grow.</span></h2>
         </div>
 
-        <div class="about-visual reveal reveal-delay-2">
-          <p class="about-visual-title">Technologies we use</p>
-
-          <div class="tech-list" role="list" aria-label="Technology stack">
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" aria-hidden="true"/> Python</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" aria-hidden="true"/> Java</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" aria-hidden="true"/> HTML</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" aria-hidden="true"/> CSS</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" aria-hidden="true"/> JavaScript</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" aria-hidden="true"/> Figma</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" aria-hidden="true"/> PHP</div>
-            <div class="tech-item" role="listitem"><img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" aria-hidden="true"/> MySQL</div>
-          </div>
-
-          <div class="about-stats" aria-label="Group statistics">
-            <div class="stat">
-              <div class="stat-value">7</div>
-              <div class="stat-label">Members</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">Building</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">∞</div>
-              <div class="stat-label">Curiosity</div>
-            </div>
-          </div>
+        <div class="about-body reveal reveal-delay">
+          <p>Cworks (Code Works) is a Ugandan team of developers delivering real digital solutions — from building responsive websites and designing clean user interfaces to automating workflows and building custom systems.</p>
+          <p>We began as a group of learners, and that spirit still defines how we work: with honesty, teamwork, creativity, and genuine care for every project we ship.</p>
+          <p>We understand the needs of local businesses, students, startups, and growing brands because we come from the same environment. Whether you're running a small business in Kampala, building a personal brand, or bringing a new idea to life — Cworks is the team to build it with you.</p>
+          <p class="origin-line">🇺🇬 Built in Uganda — from Kampala to the world.</p>
         </div>
+      </div>
+
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <span class="stat-num">7</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Services</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+      </div>
+
+      <div class="tech-section reveal reveal-delay">
+        <p class="tech-heading">Technologies we use</p>
+        <div class="tech-grid" role="list" aria-label="Technology stack">
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true"/>Python</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true"/>Java</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" aria-hidden="true"/>HTML</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" aria-hidden="true"/>CSS</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" aria-hidden="true"/>JavaScript</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" aria-hidden="true"/>Figma</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="" aria-hidden="true"/>PHP</div>
+          <div class="tech-pill" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true"/>MySQL</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="section services" id="services" aria-label="Services">
+    <div class="services-bg" aria-hidden="true"></div>
+    <div class="container">
+
+      <div class="section-label-row reveal">
+        <span class="section-chip section-chip--light">What We Offer</span>
+        <div class="chip-line chip-line--light"></div>
+      </div>
+
+      <h2 class="services-title reveal">Services We<br/><em>Can Build</em> For You</h2>
+      <p class="services-sub reveal reveal-delay">From concept to deployment — clean code, practical solutions.</p>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal" tabindex="0">
+          <div class="service-num" aria-hidden="true">01</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+          <h3><a href="web-development.html" class="service-title-link">Website Building</a></h3>
+          <p>From design to hosting, we build clean, responsive websites tailored to your needs and get them live on the web.</p>
+          <div class="service-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="service-footer">
+            <span class="service-status"><span class="status-dot"></span>Available</span>
+            <a href="web-development.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+          </div>
+        </article>
+
+        <article class="service-card reveal reveal-delay" tabindex="0">
+          <div class="service-num" aria-hidden="true">02</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3><a href="ui-ux-design.html" class="service-title-link">UI / UX Design</a></h3>
+          <p>Thoughtful interfaces that look great and feel intuitive. Designed with the user in mind from the first sketch.</p>
+          <div class="service-tags">
+            <span>Figma</span><span>CSS</span><span>Responsive</span>
+          </div>
+          <div class="service-footer">
+            <span class="service-status"><span class="status-dot"></span>Available</span>
+            <a href="ui-ux-design.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+          </div>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2" tabindex="0">
+          <div class="service-num" aria-hidden="true">03</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-paintbrush"></i></div>
+          <h3><a href="graphic-design.html" class="service-title-link">Graphic Design</a></h3>
+          <p>Logos, brand identities, social media assets, and print-ready materials. Visual communication that makes your brand stand out.</p>
+          <div class="service-tags">
+            <span>Figma</span><span>Branding</span><span>Print</span>
+          </div>
+          <div class="service-footer">
+            <span class="service-status"><span class="status-dot"></span>Available</span>
+            <a href="graphic-design.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+          </div>
+        </article>
+
+        <article class="service-card reveal reveal-delay" tabindex="0">
+          <div class="service-num" aria-hidden="true">04</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+          <h3><a href="database-management.html" class="service-title-link">Database Management</a></h3>
+          <p>Custom database systems designed, built, and managed for your business. Structured storage, fast queries, and reliable data you can trust.</p>
+          <div class="service-tags">
+            <span>MySQL</span><span>PHP</span><span>Python</span>
+          </div>
+          <div class="service-footer">
+            <span class="service-status"><span class="status-dot"></span>Available</span>
+            <a href="database-management.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+          </div>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2" tabindex="0">
+          <div class="service-num" aria-hidden="true">05</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-server"></i></div>
+          <h3><a href="system-building.html" class="service-title-link">System Building</a></h3>
+          <p>Custom desktop and web-based systems — inventory management, booking platforms, internal tools, and more. Built to spec.</p>
+          <div class="service-tags">
+            <span>PHP</span><span>MySQL</span><span>Python</span>
+          </div>
+          <div class="service-footer">
+            <span class="service-status"><span class="status-dot"></span>Available</span>
+            <a href="system-building.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+          </div>
+        </article>
+
+        <article class="service-card service-card--cta reveal reveal-delay-3" tabindex="0">
+          <div class="service-num" aria-hidden="true">?</div>
+          <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Got Something Else?</h3>
+          <p>Have a project idea that doesn't fit neatly into a box? Reach out — we're always open to a conversation.</p>
+          <div class="service-tags">
+            <span>Let's Talk</span>
+          </div>
+          <a href="#contact" class="service-cta-link">Start a conversation <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </article>
 
       </div>
     </div>
@@ -219,187 +252,116 @@
 
   <!-- TEAM -->
   <section class="section team" id="team" aria-label="Meet the team">
-    <canvas id="antigravity-team" aria-hidden="true"></canvas>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// the team</span>
-        <h2 class="section-title">The People Behind<br/><span class="gradient-text">Cworks</span></h2>
-        <p class="section-description">A group of curious developers, each bringing their own background and ideas to the table.</p>
-        <span class="accent-line" aria-hidden="true"></span>
+
+      <div class="section-label-row reveal">
+        <span class="section-chip">The Team</span>
+        <div class="chip-line"></div>
       </div>
+
+      <h2 class="team-title reveal">The People Behind <span class="accent-text">Cworks</span></h2>
+      <p class="team-sub reveal reveal-delay">A group of curious developers, each bringing their own background and ideas to the table.</p>
 
       <div class="team-grid" role="list" aria-label="Team members">
-        <article class="team-card reveal reveal-delay-1" role="listitem">
-          <img class="team-avatar" src="https://github.com/FrostyDot512.png" alt="Anwaar Batala" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Anwaar Batala</h3>
-          <p class="team-bio">Passionate about coding. He loves turning ideas into real-life solutions.</p>
-          <div class="team-social">
-            <a href="https://github.com/FrostyDot512" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Anwaar Batala's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/anwaar-batala-46069a362/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Anwaar Batala's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+
+        <article class="team-card reveal" role="listitem">
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/FrostyDot512.png" alt="Anwaar Batala" width="72" height="72" loading="lazy"/>
+          </div>
+          <div class="team-info">
+            <h3>Anwaar Batala</h3>
+            <p>Passionate about coding. He loves turning ideas into real-life solutions.</p>
+            <div class="team-links">
+              <a href="https://github.com/FrostyDot512" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/anwaar-batala-46069a362/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="team-card reveal reveal-delay" role="listitem">
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/GrandMaster142.png" alt="Benjamin Ongom" width="72" height="72" loading="lazy"/>
+          </div>
+          <div class="team-info">
+            <h3>Benjamin Ongom</h3>
+            <p>UI/UX designer focused on creating simple, intuitive, and meaningful digital experiences.</p>
+            <div class="team-links">
+              <a href="https://github.com/GrandMaster142" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/benjamin-ongom-a2a5672a6/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
         <article class="team-card reveal reveal-delay-2" role="listitem">
-          <img class="team-avatar" src="https://github.com/GrandMaster142.png" alt="Benjamin Ongom" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Benjamin Ongom</h3>
-          <p class="team-bio">UI/UX designer focused on creating simple, intuitive, and meaningful digital experiences.</p>
-          <div class="team-social">
-            <a href="https://github.com/GrandMaster142" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Benjamin Ongom's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/benjamin-ongom-a2a5672a6/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Benjamin Ongom's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/eliosha.png" alt="Elisha Benjamin" width="72" height="72" loading="lazy"/>
+          </div>
+          <div class="team-info">
+            <h3>Elisha Benjamin</h3>
+            <p>Creates responsive websites that combine simplicity, performance, and modern design.</p>
+            <div class="team-links">
+              <a href="https://github.com/eliosha" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/elisha-mukisa-5b5963402/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
-        <article class="team-card reveal reveal-delay-3" role="listitem">
-          <img class="team-avatar" src="https://github.com/eliosha.png" alt="Elisha Benjamin" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Elisha Benjamin</h3>
-          <p class="team-bio">Creates responsive websites that combine simplicity, performance, and modern design.</p>
-          <div class="team-social">
-            <a href="https://github.com/eliosha" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Elisha Benjamin's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/elisha-mukisa-5b5963402/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Elisha Benjamin's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <article class="team-card reveal" role="listitem">
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/Mrj-1007.png" alt="Jonathan Miyingo" width="72" height="72" loading="lazy"/>
+          </div>
+          <div class="team-info">
+            <h3>Jonathan Miyingo</h3>
+            <p>A curious developer passionate about designing and building things that make an impact.</p>
+            <div class="team-links">
+              <a href="https://github.com/Mrj-1007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/jonathan-m-a0818a313/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
-        <article class="team-card reveal reveal-delay-4" role="listitem">
-          <img class="team-avatar" src="https://github.com/Mrj-1007.png" alt="Jonathan Miyingo" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Jonathan Miyingo</h3>
-          <p class="team-bio">A curious developer passionate about designing and building things that make an impact.</p>
-          <div class="team-social">
-            <a href="https://github.com/Mrj-1007" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Jonathan Miyingo's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/jonathan-m-a0818a313/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Jonathan Miyingo's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <article class="team-card reveal reveal-delay" role="listitem">
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/Trojannetwork.png" alt="Mark Lui" width="72" height="72" loading="lazy"/>
           </div>
-        </article>
-      </div>
-
-      <div class="team-grid team-grid--centered" role="list" aria-label="Team members continued" style="margin-top: 24px;">
-        <article class="team-card reveal reveal-delay-1" role="listitem">
-          <img class="team-avatar" src="https://github.com/Trojannetwork.png" alt="Mark Lui" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Mark Lui</h3>
-          <p class="team-bio">Software Developer &amp; Cloud Architect building custom desktop apps for small businesses, focused on inventory management and automation.</p>
-          <div class="team-social">
-            <a href="https://github.com/Trojannetwork" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Mark Lui's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/lui-mark-25259339b/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Mark Lui's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <div class="team-info">
+            <h3>Mark Lui</h3>
+            <p>Software Developer &amp; Cloud Architect building custom desktop apps for small businesses, focused on inventory management and automation.</p>
+            <div class="team-links">
+              <a href="https://github.com/Trojannetwork" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/lui-mark-25259339b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
         <article class="team-card reveal reveal-delay-2" role="listitem">
-          <img class="team-avatar" src="https://github.com/MOSES-LEO-tech.png" alt="Moses Leo" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Moses Leo</h3>
-          <p class="team-bio">Innovative developer combining creativity and AI to build intelligent, real-world digital solutions.</p>
-          <div class="team-social">
-            <a href="https://github.com/MOSES-LEO-tech" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Moses Leo's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/moses-leo-04477a336/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Moses Leo's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/MOSES-LEO-tech.png" alt="Moses Leo" width="72" height="72" loading="lazy"/>
+          </div>
+          <div class="team-info">
+            <h3>Moses Leo</h3>
+            <p>Innovative developer combining creativity and AI to build intelligent, real-world digital solutions.</p>
+            <div class="team-links">
+              <a href="https://github.com/MOSES-LEO-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/moses-leo-04477a336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
-        <article class="team-card reveal reveal-delay-3" role="listitem">
-          <img class="team-avatar" src="https://github.com/Otwiine.png" alt="Otwiine Olweny" width="80" height="80" loading="lazy"/>
-          <p class="team-role">// Member</p>
-          <h3 class="team-name">Otwiine Olweny</h3>
-          <p class="team-bio">Passionate about geospatial studies, web development, and building impactful solutions through code.</p>
-          <div class="team-social">
-            <a href="https://github.com/Otwiine" class="team-github" target="_blank" rel="noopener noreferrer" aria-label="Otwiine Olweny's GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/otwiine-olweny-60b871402/" class="team-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Otwiine Olweny's LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <article class="team-card reveal" role="listitem">
+          <div class="team-avatar-wrap">
+            <img src="https://github.com/Otwiine.png" alt="Otwiine Olweny" width="72" height="72" loading="lazy"/>
           </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- SERVICES -->
-  <section class="section projects" id="projects" aria-label="Services we offer">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// what we offer</span>
-        <h2 class="section-title">Services We<br/><span class="gradient-text">Can Build For You</span></h2>
-        <p class="section-description">From concept to deployment, we bring ideas to life through clean code and practical solutions.</p>
-        <span class="accent-line" aria-hidden="true"></span>
-      </div>
-
-      <div class="projects-grid" role="list" aria-label="Services">
-        <article class="project-card reveal reveal-delay-1" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
-          <h3 class="project-name">Website Building</h3>
-          <p class="project-description">From design to hosting, we build clean, responsive websites tailored to your needs, and get them live on the web.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Available</span>
-            <a href="web-development.html" class="btn-ghost" aria-label="Learn more about Website Building">Learn More <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
+          <div class="team-info">
+            <h3>Otwiine Olweny</h3>
+            <p>Passionate about geospatial studies, web development, and building impactful solutions through code.</p>
+            <div class="team-links">
+              <a href="https://github.com/Otwiine" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/otwiine-olweny-60b871402/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
           </div>
         </article>
 
-        <article class="project-card reveal reveal-delay-2" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen"></i></div>
-          <h3 class="project-name">UI / UX Design</h3>
-          <p class="project-description">Thoughtful interfaces that look great and feel intuitive. Designed with the user in mind from the first sketch.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">Figma</span><span class="tech-tag">CSS</span><span class="tech-tag">Responsive</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Available</span>
-            <a href="ui-ux-design.html" class="btn-ghost" aria-label="Learn more about UI/UX Design">Learn More <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-3" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-paintbrush"></i></div>
-          <h3 class="project-name">Graphic Design</h3>
-          <p class="project-description">Logos, brand identities, social media assets, and print-ready materials. Visual communication that makes your brand stand out.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">Figma</span><span class="tech-tag">Branding</span><span class="tech-tag">Print</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Available</span>
-            <a href="graphic-design.html" class="btn-ghost" aria-label="Learn more about Graphic Design">Learn More <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-2" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
-          <h3 class="project-name">Database Management</h3>
-          <p class="project-description">Custom database systems designed, built, and managed for your business. Structured storage, fast queries, and reliable data you can trust.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">MySQL</span><span class="tech-tag">PHP</span><span class="tech-tag">Python</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Available</span>
-            <a href="database-management.html" class="btn-ghost" aria-label="Learn more about Database Management">Learn More <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-3" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-server"></i></div>
-          <h3 class="project-name">System Building</h3>
-          <p class="project-description">Custom desktop and web-based systems — inventory management, booking platforms, internal tools, and more. Built to spec.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">Python</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Available</span>
-            <a href="system-building.html" class="btn-ghost" aria-label="Learn more about System Building">Learn More <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal reveal-delay-1" role="listitem">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-          <h3 class="project-name">Got Something Else?</h3>
-          <p class="project-description">Have a project idea that doesn't fit neatly into a box? Reach out — we're always open to a conversation.</p>
-          <div class="project-tags" aria-label="Technologies used">
-            <span class="tech-tag">Let's Talk</span>
-          </div>
-          <div class="project-footer">
-            <span class="project-status"><span class="status-dot" aria-hidden="true"></span> Get in Touch</span>
-            <a href="#contact" class="btn-ghost" aria-label="Contact Cworks">Contact Us <i class="fa-solid fa-arrow-right fa-xs" aria-hidden="true"></i></a>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -407,108 +369,114 @@
 
   <!-- CONTACT -->
   <section class="section contact" id="contact" aria-label="Contact Cworks">
-    <canvas id="antigravity-contact" aria-hidden="true"></canvas>
+    <div class="contact-bg" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// get in touch</span>
-        <h2 class="section-title">Say <span class="gradient-text">Hello</span></h2>
-        <p class="section-description">Serving clients across Uganda and beyond. Questions, ideas? Reach out!</p>
-        <span class="accent-line" aria-hidden="true"></span>
+
+      <div class="section-label-row reveal">
+        <span class="section-chip section-chip--light">Get In Touch</span>
+        <div class="chip-line chip-line--light"></div>
       </div>
 
-      <div class="contact-wrapper">
+      <h2 class="contact-title reveal">Say <em>Hello</em></h2>
+      <p class="contact-sub reveal reveal-delay">Serving clients across Uganda and beyond. Questions, ideas? Reach out!</p>
+
+      <div class="contact-grid">
+
         <div class="contact-info reveal">
           <h3>We'd love to hear from you</h3>
-          <p>Whether you want to share a project idea, ask a question, or just say hi, we're always happy to connect.</p>
-          <a href="https://www.instagram.com/thecodehub26/" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram" style="color: #E1306C;" aria-hidden="true"></i> Follow us on Instagram
-          </a>
-          <a href="https://www.linkedin.com/company/codehub26/" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin" style="color: #0A66C2;" aria-hidden="true"></i> Follow us on LinkedIn
-          </a>
-          <a href="tel:+256788368997" class="contact-link">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i> Call us: +256 788 368 997
-          </a>
-          <a href="https://wa.me/256788368997" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" style="color: #25D366;" aria-hidden="true"></i> Chat on WhatsApp
-          </a>
-          <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-star" style="color: #FBBC04;" aria-hidden="true"></i> Leave us a Google Review
-          </a>
+          <p>Whether you want to share a project idea, ask a question, or just say hi — we're always happy to connect.</p>
+
+          <div class="contact-links">
+            <a href="tel:+256788368997" class="contact-link-item">
+              <span class="cl-icon"><i class="fa-solid fa-phone"></i></span>
+              <span>+256 788 368 997</span>
+            </a>
+            <a href="https://wa.me/256788368997" class="contact-link-item" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon" style="background:#25D366;"><i class="fa-brands fa-whatsapp"></i></span>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/thecodehub26/" class="contact-link-item" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon" style="background:#E1306C;"><i class="fa-brands fa-instagram"></i></span>
+              <span>Follow on Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/company/codehub26/" class="contact-link-item" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon" style="background:#0A66C2;"><i class="fa-brands fa-linkedin"></i></span>
+              <span>Follow on LinkedIn</span>
+            </a>
+            <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link-item" target="_blank" rel="noopener noreferrer">
+              <span class="cl-icon" style="background:#FBBC04; color:#111;"><i class="fa-solid fa-star"></i></span>
+              <span>Leave a Google Review</span>
+            </a>
+          </div>
         </div>
 
-        <div class="contact-form reveal reveal-delay-2">
+        <div class="contact-form-wrap reveal reveal-delay">
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form" novalidate>
             <input type="hidden" name="access_key" value="dd3dd29d-fc75-4ea5-b907-18526ad695c6"/>
             <input type="hidden" name="redirect" value="false"/>
             <input type="hidden" name="subject" value="New message from Cworks website"/>
             <input type="hidden" name="from_name" value="Cworks Website"/>
 
-            <div class="form-group">
-              <label class="form-label" for="contact-name">Your Name</label>
-              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Alex Johnson" autocomplete="name" required/>
-              <span class="form-error" id="name-error" aria-live="polite"></span>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Alex Johnson" autocomplete="name" required/>
+                <span class="form-error" id="name-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="alex@example.com" autocomplete="email" required/>
+                <span class="form-error" id="email-error" aria-live="polite"></span>
+              </div>
             </div>
+
             <div class="form-group">
-              <label class="form-label" for="contact-email">Email Address</label>
-              <input class="form-input" type="email" id="contact-email" name="email" placeholder="alex@example.com" autocomplete="email" required/>
-              <span class="form-error" id="email-error" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-phone">Phone Number</label>
-              <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" autocomplete="tel" required/>
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" autocomplete="tel" required/>
               <span class="form-error" id="phone-error" aria-live="polite"></span>
             </div>
+
             <div class="form-group">
-              <label class="form-label" for="contact-message">Message</label>
-              <textarea class="form-textarea" id="contact-message" name="message" placeholder="Hey Cworks! I'd love to..." rows="5" required></textarea>
+              <label for="contact-message">Your Message</label>
+              <textarea id="contact-message" name="message" placeholder="Hey Cworks! I'd love to..." rows="5" required></textarea>
             </div>
 
             <div id="form-feedback" class="form-feedback" aria-live="polite" hidden></div>
 
-            <button type="submit" id="form-submit" class="btn-primary" style="width:100%; justify-content:center;">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-              Send Message
+            <button type="submit" id="form-submit" class="btn-submit">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
             </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
 
   <!-- FOOTER -->
-  <footer class="footer" role="contentinfo" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>
-          <div class="footer-logo">
-            <a href="#hero" class="footer-logo-link" aria-label="Back to top">
-              <span class="footer-logo-icon" aria-hidden="true">
-                <i class="fa-solid fa-code" style="color:#fff; font-size:0.8rem;"></i>
-              </span>
-              Cworks
-            </a>
-          </div>
-          <p class="footer-tagline">Code Works — Building, Shipping, Growing.</p>
-          <p class="footer-origin">🇺🇬 Proudly built in Kampala, Uganda</p>
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="Gemini_Generated_Image_h7g71sh7g71sh7g7.png" alt="Cworks" class="footer-logo-img" width="32" height="32"/>
+          <span class="footer-name">Cworks</span>
         </div>
-        <nav aria-label="Footer navigation">
-          <ul class="footer-links" role="list">
-            <li><a href="#about"    class="footer-link">About</a></li>
-            <li><a href="#team"     class="footer-link">Team</a></li>
-            <li><a href="#projects" class="footer-link">Services</a></li>
-            <li><a href="#contact"  class="footer-link">Contact</a></li>
-          </ul>
-        </nav>
+        <p class="footer-tagline">Code Works — Building, Shipping, Growing.</p>
+        <p class="footer-origin">🇺🇬 Proudly built in Kampala, Uganda</p>
       </div>
-      <p class="footer-copy">© 2025 Cworks · Built with HTML · CSS · JavaScript</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+    <p class="footer-copy">© 2025 Cworks · Built with HTML · CSS · JavaScript</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="antigravity.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
