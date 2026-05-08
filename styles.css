@@ -198,14 +198,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   gap: 0;
   background: rgba(13, 27, 42, 0.97);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 0.5rem 1.5rem 1.25rem;
+  padding: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s var(--ease-out), padding 0.3s;
 }
 .mobile-menu.open {
-  max-height: 300px;
+  max-height: 320px;
   padding: 0.75rem 1.5rem 1.5rem;
 }
 .mobile-menu .nav-link {
@@ -317,7 +318,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   justify-content: center;
   margin-bottom: 2rem;
   opacity: 0;
-  mix-blend-mode: screen;
   animation: logo-rise 0.9s 0.35s var(--ease-out) forwards;
 }
 .hero-logo-img {
@@ -1726,17 +1726,20 @@ details[open] .faq-icon { transform: rotate(180deg); }
 }
 
 @media (max-width: 680px) {
-  .nav-links    { display: none; }
-  .hamburger    { display: flex; }
-  .mobile-menu  { display: flex; }
+  .nav-links     { display: none; }
+  .hamburger     { display: flex; }
+  .mobile-menu   { display: flex; }
+  .hero-actions  { flex-direction: column; align-items: center; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { width: 100%; max-width: 300px; justify-content: center; }
   .services-grid { grid-template-columns: 1fr; }
-  .team-grid    { grid-template-columns: 1fr; }
+  .team-grid     { grid-template-columns: 1fr; }
   .team-grid .team-card:last-child:nth-child(2n + 1) { grid-column: auto; max-width: none; }
-  .form-row     { grid-template-columns: 1fr; }
-  .stat-divider { display: none; }
-  .stats-row    { gap: 1rem; }
-  .footer-links { align-items: flex-start; }
-  .footer-inner { flex-direction: column; }
+  .form-row      { grid-template-columns: 1fr; }
+  .stat-divider  { display: none; }
+  .stats-row     { gap: 1rem; }
+  .footer-links  { align-items: flex-start; }
+  .footer-inner  { flex-direction: column; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero-logo-img { width: clamp(160px, 70vw, 280px); }
   .process-steps { margin-left: 0.75rem; }
