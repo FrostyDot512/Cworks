@@ -1,609 +1,343 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Database Management Systems in Uganda — MySQL &amp; Custom DB Solutions | Cworks Kampala</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="Cworks.png"/>
-  <link rel="apple-touch-icon" href="Cworks.png"/>
-
-  <!-- Primary SEO -->
-  <meta name="description" content="Cworks designs, builds, and manages custom database systems for businesses in Uganda. From MySQL schema design to query optimisation and data migration — based in Kampala."/>
-  <meta name="keywords" content="database management Uganda, MySQL Uganda, database design Kampala, custom database Uganda, SQL Uganda, database system Kampala, data storage Uganda, PHP MySQL Uganda, database optimisation Uganda"/>
-  <meta name="author" content="Cworks — The Runner Team"/>
-  <meta name="robots" content="index, follow"/>
-  <meta name="theme-color" content="#e07a5f"/>
-  <link rel="canonical" href="https://the-runner-team.github.io/website/database-management.html"/>
-
-  <!-- Geo targeting -->
-  <meta name="geo.region" content="UG-C"/>
-  <meta name="geo.placename" content="Kampala, Uganda"/>
-  <meta name="geo.position" content="0.3476;32.5825"/>
-  <meta name="ICBM" content="0.3476, 32.5825"/>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Database Management Systems in Uganda — MySQL &amp; Custom DB Solutions | Cworks"/>
-  <meta property="og:description" content="Custom database design, build, and management for Ugandan businesses. Structured storage, fast queries, and reliable data — Cworks, based in Kampala."/>
-  <meta property="og:url" content="https://the-runner-team.github.io/website/database-management.html"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Cworks"/>
-  <meta property="og:image" content="https://the-runner-team.github.io/website/Cworks.png"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="1200"/>
-  <meta property="og:image:alt" content="Cworks Database Management — Kampala, Uganda"/>
-  <meta property="og:locale" content="en_UG"/>
-
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Database Management Systems in Uganda | Cworks Kampala"/>
-  <meta name="twitter:description" content="Custom MySQL databases designed, built, and managed for Ugandan businesses. Fast, structured, reliable — Cworks, Kampala."/>
-  <meta name="twitter:image" content="https://the-runner-team.github.io/website/Cworks.png"/>
-  <meta name="twitter:image:alt" content="Cworks Database Management — Kampala, Uganda"/>
-  <meta name="twitter:url" content="https://the-runner-team.github.io/website/database-management.html"/>
-  <meta name="twitter:site" content="@thecworks26"/>
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Database Management System",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Cworks",
-      "url": "https://the-runner-team.github.io/website/",
-      "telephone": "+256788368997",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kampala",
-        "addressCountry": "UG"
-      },
-      "sameAs": [
-        "https://github.com/the-runner-team",
-        "https://www.instagram.com/thecworks26/"
-      ]
-    },
-    "description": "Cworks designs, builds, and manages custom MySQL database systems for businesses across Uganda — from schema design and query optimisation to data migration and ongoing administration.",
-    "areaServed": "Uganda",
-    "url": "https://the-runner-team.github.io/website/database-management.html"
-  }
-  </script>
-
-  <!-- Google Fonts -->
+  <title>Database Management — CWORKS · Kampala, Uganda</title>
+  <meta name="description" content="CWORKS designs and builds clean, optimised MySQL databases for web applications and business systems across Uganda."/>
+  <link rel="icon" type="image/png" href="cworks-logo-transparent.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
-
-  <!-- Font Awesome -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .service-hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:9rem 2rem 5rem;overflow:hidden;background:var(--bg-primary)}
+    .service-hero-bg{position:absolute;inset:0;pointer-events:none}
+    .service-hero-glow-1{position:absolute;width:600px;height:600px;top:-200px;right:-100px;border-radius:50%;background:radial-gradient(circle,rgba(224,122,95,.07) 0%,transparent 70%);animation:floatOrb 9s ease-in-out infinite}
+    .service-hero-glow-2{position:absolute;width:500px;height:500px;bottom:-100px;left:-100px;border-radius:50%;background:radial-gradient(circle,rgba(65,90,119,.1) 0%,transparent 70%);animation:floatOrb 12s ease-in-out infinite reverse}
+    .service-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(65,90,119,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(65,90,119,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 50%,black 20%,transparent 80%)}
+    .service-hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%}
+    .service-hero-back{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:500;color:var(--text-secondary);margin-bottom:2rem;transition:color .2s}
+    .service-hero-back:hover{color:var(--white)}
+    .service-hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .88rem;border:1px solid var(--border);border-radius:100px;font-size:.72rem;font-weight:500;color:var(--accent);letter-spacing:.06em;margin-bottom:1.5rem;background:var(--accent-light)}
+    .service-hero-title{font-size:clamp(2.5rem,6vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.25rem;max-width:800px}
+    .service-hero-title em{font-family:var(--font-serif);font-style:italic;font-weight:400}
+    .service-hero-sub{font-size:clamp(.92rem,1.7vw,1.1rem);color:var(--text-secondary);max-width:580px;line-height:1.75;margin-bottom:2.5rem}
+    .service-hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .service-hero-meta{display:flex;align-items:center;gap:2.5rem;margin-top:3.5rem;flex-wrap:wrap}
+    .meta-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--text-secondary)}
+    .meta-item i{color:var(--accent);font-size:.8rem}
+    .meta-item strong{color:var(--white)}
+    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    .include-card{background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .3s,transform .3s}
+    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-3px)}
+    .include-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-light);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:1rem}
+    .include-card h3{font-size:.97rem;font-weight:700;margin-bottom:.45rem}
+    .include-card p{font-size:.81rem;color:var(--text-secondary);line-height:1.65}
+    @media(max-width:900px){.includes-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}}
+  </style>
 </head>
-
 <body>
-
-  <!-- ============================================================
-       NAVIGATION BAR
-       ============================================================ -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container nav-inner">
-
-      <a href="index.html" class="nav-logo" aria-label="Cworks home"><img src="Gemini_Generated_Image_h7g71sh7g71sh7g7.png" alt="Cworks" class="nav-logo-img" width="42" height="42"/></a>
-
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="CWORKS home">
+        <img src="cworks-logo-transparent.png" alt="CWORKS" class="nav-logo-img" width="32" height="32"/>
+        <span class="nav-logo-text">CWORKS</span>
+      </a>
       <ul class="nav-links" role="list">
         <li><a href="#includes" class="nav-link">What's Included</a></li>
         <li><a href="#process"  class="nav-link">Process</a></li>
         <li><a href="#pricing"  class="nav-link">Pricing</a></li>
         <li><a href="#contact"  class="nav-link">Contact</a></li>
       </ul>
-
-      <div class="nav-actions">
-        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
+      <a href="#contact" class="nav-cta"><span>Get a Quote</span><i class="fa-solid fa-arrow-up-right fa-xs"></i></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#includes" class="nav-link">What's Included</a>
+      <a href="#process"  class="nav-link">Process</a>
+      <a href="#pricing"  class="nav-link">Pricing</a>
+      <a href="#contact"  class="nav-link">Contact</a>
     </div>
   </nav>
-
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu" role="menu">
-    <a href="#includes" class="nav-link" role="menuitem">What's Included</a>
-    <a href="#process"  class="nav-link" role="menuitem">Process</a>
-    <a href="#pricing"  class="nav-link" role="menuitem">Pricing</a>
-    <a href="#contact"  class="nav-link" role="menuitem">Contact</a>
-  </div>
-
-
-  <!-- ============================================================
-       PAGE HERO
-       ============================================================ -->
-  <section class="hero" id="hero" aria-label="Database Management System service">
-    <canvas id="antigravity-hero" aria-hidden="true"></canvas>
-    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
-    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
-
-    <div class="container">
-      <div class="hero-content">
-
-        <div class="hero-badge" aria-hidden="true">
-          <span class="hero-badge-dot"></span>
-          <span class="font-code">// services / database-management</span>
-        </div>
-
-        <h1 class="hero-title">
-          Database <span class="gradient-text">Management</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span>
-        </p>
-
-        <p class="hero-description">
-          Your data is one of your most valuable assets. We design, build, and
-          manage databases that store it reliably, retrieve it fast, and scale
-          as your business grows — so you never have to worry about what's under the hood.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#process" class="btn-primary">
-            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
-            Our Process
-          </a>
-          <a href="#pricing" class="btn-secondary">
-            <i class="fa-solid fa-tag" aria-hidden="true"></i>
-            Pricing
-          </a>
-        </div>
-
+  <section class="service-hero" aria-label="Database Management service">
+    <div class="service-hero-bg" aria-hidden="true">
+      <div class="service-hero-glow-1"></div>
+      <div class="service-hero-glow-2"></div>
+      <div class="service-hero-grid"></div>
+    </div>
+    <div class="service-hero-content">
+      <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid database fa-xs"></i><span>Database Management</span></div>
+      <h1 class="service-hero-title reveal">Your Data,<br/><em>Structured Right</em></h1>
+      <p class="service-hero-sub reveal">We design clean, optimised databases for web applications and business systems — fast queries, secure storage, and properly documented for your developers.</p>
+      <div class="service-hero-actions reveal">
+        <a href="#pricing" class="btn-primary mag-btn"><span>View Pricing</span><i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
+      </div>
+      <div class="service-hero-meta reveal">
+        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>3 days</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 200,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid database"></i><span><strong>MySQL</strong> specialised</span></div>
+        <div class="meta-item"><i class="fa-solid shield-halved"></i><span><strong>Secure</strong> by design</span></div>
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       WHAT'S INCLUDED
-       ============================================================ -->
-  <section class="section about" id="includes" aria-label="What's included">
+  <section class="section about" id="includes" style="background:var(--bg-secondary);">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// what you get</span>
-        <h2 class="section-title">Everything You<br/><span class="gradient-text">Need, Included</span></h2>
-        <p class="section-description">No hidden extras. Here is exactly what every database engagement covers.</p>
-        <span class="accent-line" aria-hidden="true"></span>
+      <div class="section-header">
+        <span class="section-label reveal">// what you get</span>
+        <h2 class="section-title reveal">Everything You<br/><em>Need, Included</em></h2>
+        <p class="section-description reveal">No hidden extras. Here is exactly what every project covers.</p>
+        <span class="accent-line reveal"></span>
       </div>
-
-      <div class="projects-grid reveal">
-
-        <article class="project-card" aria-label="Schema Design">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-sitemap"></i></div>
-          <h3 class="project-name">Schema Design</h3>
-          <p class="project-description">
-            A well-designed schema is the foundation of everything. We model your data correctly from the start — tables, relationships, data types, and constraints — so you're not rebuilding it six months later because it couldn't scale.
-          </p>
-        </article>
-
-        <article class="project-card" aria-label="Database Build">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
-          <h3 class="project-name">Database Build &amp; Setup</h3>
-          <p class="project-description">
-            We set up and configure your MySQL database environment — creating the tables, indexes, relationships, and stored procedures your application needs. Hosted on your server or ours.
-          </p>
-        </article>
-
-        <article class="project-card" aria-label="Query Optimisation">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-          <h3 class="project-name">Query Optimisation</h3>
-          <p class="project-description">
-            Slow queries kill user experience. We audit your existing queries, add the right indexes, rewrite inefficient SQL, and make sure your database responds fast — even as your data grows.
-          </p>
-        </article>
-
-        <article class="project-card" aria-label="Data Migration">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-arrows-rotate"></i></div>
-          <h3 class="project-name">Data Migration</h3>
-          <p class="project-description">
-            Moving from spreadsheets, an old system, or another database? We handle the full migration — cleaning the data, mapping it to the new structure, and verifying it's all landed correctly before go-live.
-          </p>
-        </article>
-
-        <article class="project-card" aria-label="Backups">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3 class="project-name">Backups &amp; Security</h3>
-          <p class="project-description">
-            We configure automated backups on a schedule you choose, set up user access controls so only the right people can read or write specific data, and apply best practices to keep your database secure.
-          </p>
-        </article>
-
-        <article class="project-card" aria-label="Documentation">
-          <div class="project-icon" aria-hidden="true"><i class="fa-solid fa-file-code"></i></div>
-          <h3 class="project-name">Documentation &amp; Handover</h3>
-          <p class="project-description">
-            You receive a complete schema diagram, data dictionary, and plain-English documentation of how the database is structured and why. Any developer who works on your project later will know exactly what they're dealing with.
-          </p>
-        </article>
-
+      <div class="includes-grid">
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid table-columns"></i></div>
+          <h3>Schema Design</h3>
+          <p>A clean, normalised database schema designed around your actual data and usage patterns — with an ER diagram included.</p>
+        </div>
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid diagram-project"></i></div>
+          <h3>ER Diagram</h3>
+          <p>A visual entity-relationship diagram showing every table, relationship, and data type — easy to share with developers.</p>
+        </div>
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid bolt"></i></div>
+          <h3>Query Optimisation</h3>
+          <p>Indexes, query analysis, and performance tuning so your database stays fast as data grows.</p>
+        </div>
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid users"></i></div>
+          <h3>User Access Control</h3>
+          <p>Role-based access control — who can read, write, update, or delete which data — configured and documented.</p>
+        </div>
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid floppy-disk"></i></div>
+          <h3>Backup Configuration</h3>
+          <p>Automated backup setup with a tested restore process. Your data is protected from day one.</p>
+        </div>
+        <div class="include-card reveal">
+          <div class="include-icon"><i class="fa-solid file-lines"></i></div>
+          <h3>Full Documentation</h3>
+          <p>Complete schema documentation including field definitions, relationships, and usage notes for your development team.</p>
+        </div>
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       OUR PROCESS
-       ============================================================ -->
-  <section class="section team process-section" id="process" aria-label="Our process">
+  <section class="section process-section" id="process">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// how it works</span>
-        <h2 class="section-title">Our <span class="gradient-text">Process</span></h2>
-        <p class="section-description">A structured workflow from requirements to a production-ready database.</p>
-        <span class="accent-line" aria-hidden="true"></span>
+      <div class="section-header">
+        <span class="section-label reveal">// how it works</span>
+        <h2 class="section-title reveal">Our <em>Process</em></h2>
+        <p class="section-description reveal">A clear, collaborative workflow from first conversation to delivery.</p>
+        <span class="accent-line reveal"></span>
       </div>
-
-      <div class="process-steps reveal">
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">01</div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-step-number">01</div>
           <div class="process-step-content">
-            <h3 class="process-step-title">Requirements &amp; Data Audit</h3>
-            <p class="process-step-desc">
-              We start by understanding your business, what data you're storing or need to store, and how it's being used. If you already have a database or spreadsheets, we audit what you have and identify what needs to be preserved, restructured, or discarded.
-            </p>
+            <h3 class="process-step-title">Requirements Gathering</h3>
+            <p class="process-step-desc">We document every entity your application needs to store, how data relates, and what queries the system will need to run.</p>
           </div>
         </div>
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">02</div>
+        <div class="process-step reveal">
+          <div class="process-step-number">02</div>
           <div class="process-step-content">
             <h3 class="process-step-title">Schema Design</h3>
-            <p class="process-step-desc">
-              We design the database structure — tables, columns, data types, primary and foreign keys, and relationships. We produce an entity-relationship (ER) diagram and share it with you for review before any database is created.
-            </p>
+            <p class="process-step-desc">We design the database structure — tables, columns, data types, relationships, and constraints — and share it with you before building.</p>
           </div>
         </div>
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">03</div>
+        <div class="process-step reveal">
+          <div class="process-step-number">03</div>
           <div class="process-step-content">
-            <h3 class="process-step-title">Build &amp; Configuration</h3>
-            <p class="process-step-desc">
-              We create the database, set up indexes, configure user permissions, and write any stored procedures or triggers your application requires. We test the structure thoroughly before populating it with real data.
-            </p>
+            <h3 class="process-step-title">Review &amp; Approval</h3>
+            <p class="process-step-desc">You review the schema design and ER diagram. We discuss and adjust until the structure matches your requirements exactly.</p>
           </div>
         </div>
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">04</div>
+        <div class="process-step reveal">
+          <div class="process-step-number">04</div>
           <div class="process-step-content">
-            <h3 class="process-step-title">Data Migration &amp; Population</h3>
-            <p class="process-step-desc">
-              We clean and import your existing data into the new structure — whether it's coming from spreadsheets, a legacy system, or another database. We verify record counts and data integrity once the migration is complete.
-            </p>
+            <h3 class="process-step-title">Build &amp; Configure</h3>
+            <p class="process-step-desc">We build the database, set up indexes, configure access control, and populate sample data so you can test immediately.</p>
           </div>
         </div>
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">05</div>
+        <div class="process-step reveal">
+          <div class="process-step-number">05</div>
           <div class="process-step-content">
-            <h3 class="process-step-title">Testing &amp; Optimisation</h3>
-            <p class="process-step-desc">
-              We run the queries your application will use in production, profile performance, and make optimisations. Slow queries get rewritten or indexed. We don't sign off until everything runs efficiently under realistic load.
-            </p>
+            <h3 class="process-step-title">Migration (if needed)</h3>
+            <p class="process-step-desc">If you're moving from an existing system or spreadsheets, we handle the migration and verify data integrity after the transfer.</p>
           </div>
         </div>
-
-        <div class="process-step">
-          <div class="process-step-number gradient-text">06</div>
+        <div class="process-step reveal">
+          <div class="process-step-number">06</div>
           <div class="process-step-content">
-            <h3 class="process-step-title">Handover &amp; Ongoing Support</h3>
-            <p class="process-step-desc">
-              We deliver the complete schema documentation, backup configuration, and access credentials. We walk you through the structure and stay available post-handover for questions. Ongoing management and administration can be arranged as a retainer.
-            </p>
+            <h3 class="process-step-title">Handover &amp; Support</h3>
+            <p class="process-step-desc">We deliver documentation, backup configuration, and access credentials — and stay available post-handover for questions.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       PRICING
-       ============================================================ -->
-  <section class="section projects" id="pricing" aria-label="Pricing">
+  <section class="section projects" id="pricing" style="background:var(--bg-primary);">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// pricing</span>
-        <h2 class="section-title">Simple, Transparent<br/><span class="gradient-text">Pricing</span></h2>
-        <p class="section-description">No surprises. Pick a tier that fits your data requirements and budget.</p>
-        <span class="accent-line" aria-hidden="true"></span>
+      <div class="section-header">
+        <span class="section-label reveal">// pricing</span>
+        <h2 class="section-title reveal">Simple, Transparent<br/><em>Pricing</em></h2>
+        <p class="section-description reveal">No surprises. Pick a tier that fits your project and budget.</p>
+        <span class="accent-line reveal"></span>
       </div>
-
       <div class="pricing-grid reveal">
-
-        <!-- Tier 1 — Starter -->
         <div class="pricing-card">
           <div class="pricing-tier-label font-code">// starter</div>
           <h3 class="pricing-name">Starter Database</h3>
-          <div class="pricing-price">
-            <span class="pricing-amount gradient-text">UGX 200,000</span>
+          <div class="ch-price-block">
+            <div class="ch-price-label">One-time</div>
+            <div class="ch-price-main">UGX 200,000</div>
           </div>
-          <p class="pricing-desc">
-            For small projects or single-purpose applications that need a clean, well-structured database to get started on.
-          </p>
+          <div class="ch-divider"></div>
+          <p class="pricing-desc">For small projects or single-purpose applications that need a clean, well-structured database to get started on.</p>
           <ul class="pricing-features">
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Up to 10 tables</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full schema design &amp; ER diagram</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Indexes &amp; relationships configured</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Basic user access control</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Sample data population</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Schema documentation</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 3–5 day delivery</li>
+            <li><i class="fa-solid fa-check"></i> Up to 10 tables</li>
+            <li><i class="fa-solid fa-check"></i> Full schema design &amp; ER diagram</li>
+            <li><i class="fa-solid fa-check"></i> Indexes &amp; relationships configured</li>
+            <li><i class="fa-solid fa-check"></i> Basic user access control</li>
+            <li><i class="fa-solid fa-check"></i> Sample data population</li>
+            <li><i class="fa-solid fa-check"></i> Schema documentation</li>
+            <li><i class="fa-solid fa-check"></i> 3&#8211;5 day delivery</li>
           </ul>
-          <a href="#contact" class="btn-secondary" style="width:100%; justify-content:center; margin-top:auto;">
-            Get Started
-          </a>
+          <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Get Started</a>
         </div>
-
-        <!-- Tier 2 — Standard (highlighted) -->
         <div class="pricing-card pricing-card--featured">
           <div class="pricing-tier-label font-code">// standard</div>
           <div class="pricing-popular-badge">Most Popular</div>
           <h3 class="pricing-name">Standard Database</h3>
-          <div class="pricing-price">
-            <span class="pricing-amount gradient-text">UGX 500,000</span>
+          <div class="ch-price-block">
+            <div class="ch-price-label">One-time</div>
+            <div class="ch-price-main">UGX 500,000</div>
           </div>
-          <p class="pricing-desc">
-            For business applications that need a robust, multi-table database with data migration from an existing source and query optimisation.
-          </p>
+          <div class="ch-divider"></div>
+          <p class="pricing-desc">For business applications needing a robust, multi-table database with data migration and query optimisation.</p>
           <ul class="pricing-features">
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Up to 25 tables</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full schema design &amp; ER diagram</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Data migration from spreadsheets or legacy DB</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Query optimisation &amp; indexing</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Role-based user access control</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Automated backup configuration</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full schema documentation</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 1–2 week delivery</li>
+            <li><i class="fa-solid fa-check"></i> Up to 25 tables</li>
+            <li><i class="fa-solid fa-check"></i> Full schema design &amp; ER diagram</li>
+            <li><i class="fa-solid fa-check"></i> Data migration from spreadsheets or legacy DB</li>
+            <li><i class="fa-solid fa-check"></i> Query optimisation &amp; indexing</li>
+            <li><i class="fa-solid fa-check"></i> Role-based user access control</li>
+            <li><i class="fa-solid fa-check"></i> Automated backup configuration</li>
+            <li><i class="fa-solid fa-check"></i> Full schema documentation</li>
+            <li><i class="fa-solid fa-check"></i> 1&#8211;2 week delivery</li>
           </ul>
-          <a href="#contact" class="btn-primary" style="width:100%; justify-content:center; margin-top:auto;">
-            Get Started
-          </a>
+          <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;margin-top:auto;">Get Started</a>
         </div>
-
-        <!-- Tier 3 — Advanced -->
         <div class="pricing-card">
           <div class="pricing-tier-label font-code">// advanced</div>
           <h3 class="pricing-name">Advanced Database</h3>
-          <div class="pricing-price">
-            <span class="pricing-amount gradient-text">Let's Talk</span>
+          <div class="ch-price-block">
+            <div class="ch-price-label">Custom quote</div>
+            <div class="ch-price-main">Let's Talk</div>
           </div>
-          <p class="pricing-desc">
-            For large or complex systems with many tables, high-volume data, stored procedures, multiple integrated applications, or ongoing DBA support.
-          </p>
+          <div class="ch-divider"></div>
+          <p class="pricing-desc">For large or complex systems with high-volume data, stored procedures, multiple integrated applications, or ongoing DBA support.</p>
           <ul class="pricing-features">
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Unlimited tables &amp; complexity</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Advanced schema &amp; normalisation</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Stored procedures &amp; triggers</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Complex data migration &amp; transformation</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Performance tuning under load</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Multi-app integration support</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ongoing DBA retainer available</li>
-            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Timeline agreed per project</li>
+            <li><i class="fa-solid fa-check"></i> Unlimited tables &amp; complexity</li>
+            <li><i class="fa-solid fa-check"></i> Advanced schema &amp; normalisation</li>
+            <li><i class="fa-solid fa-check"></i> Stored procedures &amp; triggers</li>
+            <li><i class="fa-solid fa-check"></i> Complex data migration &amp; transformation</li>
+            <li><i class="fa-solid fa-check"></i> Performance tuning under load</li>
+            <li><i class="fa-solid fa-check"></i> Multi-app integration support</li>
+            <li><i class="fa-solid fa-check"></i> Ongoing DBA retainer available</li>
+            <li><i class="fa-solid fa-check"></i> Timeline agreed per project</li>
           </ul>
-          <a href="#contact" class="btn-secondary" style="width:100%; justify-content:center; margin-top:auto;">
-            Get Started
-          </a>
+          <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto;">Get Started</a>
         </div>
-
       </div>
-
-      <!-- Pricing notes -->
       <div class="pricing-notes reveal">
-        <p class="font-code" style="color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-top: 32px;">
-          All prices are in Ugandan Shillings (UGX). A 50% deposit is required to begin work, with the remaining balance due on delivery. For large-scale or multi-application database projects, select "Consultation" for a custom quote.
-        </p>
+        <p class="font-code" style="color:var(--text-muted);font-size:.75rem;text-align:center;margin-top:1.5rem;">All prices in UGX. 50% deposit to begin, balance due on delivery. Large-scale or multi-application projects — select Consultation for a custom quote.</p>
       </div>
-
     </div>
-  </section>
-
-
-  <!-- ============================================================
-       CTA — GET IN TOUCH
-       ============================================================ -->
-  <section class="section contact" id="contact" aria-label="Get in touch">
+  </section>  <section class="section contact" id="contact" style="background:var(--bg-secondary);">
+    <div class="contact-bg" aria-hidden="true"><div class="contact-glow-1"></div><div class="contact-glow-2"></div></div>
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// ready to structure your data?</span>
-        <h2 class="section-title">Let's Build Your<br/><span class="gradient-text">Database</span></h2>
-        <p class="section-description">Tell us about your data and we'll design the right structure for it.</p>
-        <span class="accent-line" aria-hidden="true"></span>
+      <div class="section-header">
+        <span class="section-label reveal">// ready to start?</span>
+        <h2 class="section-title reveal">Let's Talk About<br/><em>Your Project</em></h2>
+        <p class="section-description reveal">Tell us what you need and we'll get back to you within 24 hours.</p>
+        <span class="accent-line reveal"></span>
       </div>
-
-      <div class="contact-wrapper contact-wrapper--wide">
-
+      <div class="contact-wrapper">
         <div class="contact-info reveal">
           <h3>Get in touch</h3>
-          <p>
-            Tell us what your application needs to store, how many records you're working with,
-            and whether you have an existing database or are starting from scratch.
-          </p>
-          <a href="https://www.instagram.com/thecworks26/" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-instagram" style="color: #E1306C;" aria-hidden="true"></i>
-            Follow us on Instagram
-          </a>
-          <a href="https://www.linkedin.com/company/cworks26/" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin" style="color: #0A66C2;" aria-hidden="true"></i>
-            Follow us on LinkedIn
-          </a>
-          <a href="tel:+256788368997" class="contact-link">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            Call us: +256 788 368 997
-          </a>
-          <a href="https://wa.me/256788368997" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" style="color: #25D366;" aria-hidden="true"></i>
-            Chat on WhatsApp
-          </a>
-          <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-star" style="color: #FBBC04;" aria-hidden="true"></i>
-            Leave us a Google Review
-          </a>
-
-          <!-- FAQ -->
+          <p>Tell us what your application needs to store, how many records you're working with, and whether you have an existing database or are starting from scratch.</p>
+          <a href="https://www.instagram.com/thecodehub26/" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color:#E1306C;"></i> Follow us on Instagram</a>
+          <a href="https://www.linkedin.com/company/codehub26/" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i> Follow us on LinkedIn</a>
+          <a href="tel:+256788368997" class="contact-link"><i class="fa-solid fa-phone"></i> Call us: +256 788 368 997</a>
+          <a href="https://wa.me/256788368997" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Chat on WhatsApp</a>
+          <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
           <div class="faq-inline">
             <p class="faq-inline-label font-code">// faq</p>
-
-            <div class="faq-list-inner">
-
-              <details class="faq-item">
-                <summary class="faq-question">
-                  What database technology do you use?
-                  <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
-                </summary>
-                <div class="faq-answer"><p>We primarily work with MySQL, which is the most widely used relational database system and integrates cleanly with PHP and Python. We can also work with SQLite for lightweight applications or PostgreSQL if your stack requires it.</p></div>
-              </details>
-
-              <details class="faq-item">
-                <summary class="faq-question">
-                  Can you migrate data from our existing system?
-                  <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
-                </summary>
-                <div class="faq-answer"><p>Yes. We handle migrations from spreadsheets, legacy databases, CSV exports, and other MySQL instances. We clean the data during migration and verify it's all landed correctly before switching over.</p></div>
-              </details>
-
-              <details class="faq-item">
-                <summary class="faq-question">
-                  Will the database work with our existing application?
-                  <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
-                </summary>
-                <div class="faq-answer"><p>If your application connects to MySQL via PHP, Python, or any standard MySQL connector, yes. We'll coordinate with your development team or — if Cworks is also building the application — handle the integration ourselves.</p></div>
-              </details>
-
-              <details class="faq-item">
-                <summary class="faq-question">
-                  How is the data backed up?
-                  <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
-                </summary>
-                <div class="faq-answer"><p>We configure automated daily backups stored either on the same server or an external location. We'll walk you through the backup schedule and how to restore from a backup on handover.</p></div>
-              </details>
-
-              <details class="faq-item">
-                <summary class="faq-question">
-                  Can you take over management of an existing database?
-                  <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
-                </summary>
-                <div class="faq-answer"><p>Yes. If you have an existing database that needs optimisation, restructuring, or ongoing management, share the details and we'll audit it and quote for the work needed.</p></div>
-              </details>
-
-            </div>
+                        <details class="faq-item"><summary class="faq-question">What database technology do you use? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>We primarily work with MySQL. We can also work with SQLite for lightweight applications or PostgreSQL if your stack requires it.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can you migrate data from our existing system? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. We handle migrations from spreadsheets, legacy databases, and CSV exports. We verify data integrity after every migration.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Do you connect the database to a website or app? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. We can integrate the database with a PHP or Python backend. If you need a full web application, we'll scope that separately.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What if our data requirements change later? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Good schema design accounts for growth. We document the structure so future developers can extend it without breaking what's already there.</p></div></details>
           </div>
-
         </div>
-
         <div class="contact-form reveal reveal-delay-2">
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Database management enquiry form" novalidate>
-
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="dd3dd29d-fc75-4ea5-b907-18526ad695c6"/>
             <input type="hidden" name="redirect" value="false"/>
-            <input type="hidden" name="subject" value="Database Management Enquiry — Cworks"/>
-            <input type="hidden" name="from_name" value="Cworks Database Management Page"/>
-
-            <div class="form-group">
-              <label class="form-label" for="contact-name">Your Name</label>
-              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" required/>
-              <span class="form-error" id="name-error" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-email">Email Address</label>
-              <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required/>
-              <span class="form-error" id="email-error" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-phone">Phone Number</label>
-              <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" autocomplete="tel" required/>
-              <span class="form-error" id="phone-error" aria-live="polite"></span>
-            </div>
+            <input type="hidden" name="subject" value="Database Management Enquiry — CWORKS"/>
+            <input type="hidden" name="from_name" value="CWORKS Database Management Page"/>
+            <div class="form-group"><label class="form-label" for="contact-name">Your Name</label><input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required/><span class="form-error" id="name-error"></span></div>
+            <div class="form-group"><label class="form-label" for="contact-email">Email Address</label><input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required/><span class="form-error" id="email-error"></span></div>
+            <div class="form-group"><label class="form-label" for="contact-phone">Phone Number</label><input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" required/><span class="form-error" id="phone-error"></span></div>
             <div class="form-group">
               <label class="form-label" for="contact-tier">Service Tier</label>
               <select class="form-input form-select" id="contact-tier" name="tier" required>
-                <option value="" disabled selected>Select a tier...</option>
+                <option value="" disabled selected>Select a tier&#8230;</option>
                 <option value="Starter Database — UGX 200,000">Starter Database — UGX 200,000</option>
                 <option value="Standard Database — UGX 500,000">Standard Database — UGX 500,000</option>
-                <option value="Advanced Database — Let's discuss pricing">Advanced Database — Let's discuss pricing</option>
-                <option value="Consultation — Let's discuss pricing">Consultation — Let's discuss pricing</option>
+                <option value="Advanced Database — Custom">Advanced Database — Let's Talk</option>
+                <option value="Consultation">Consultation &#8212; Let's discuss</option>
               </select>
-              <span class="form-error" id="tier-error" aria-live="polite"></span>
+              <span class="form-error" id="tier-error"></span>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="contact-message">Tell us about your database needs</label>
-              <textarea class="form-textarea" id="contact-message" name="message" placeholder="What does your application store? Do you have an existing database or are you starting fresh? How many tables or data types are involved?" rows="5" required></textarea>
-            </div>
-
+            <div class="form-group"><label class="form-label" for="contact-message">Tell us about your project</label><textarea class="form-textarea" id="contact-message" name="message" placeholder="Describe what you need&#8230;" rows="5"></textarea></div>
             <div id="form-feedback" class="form-feedback" aria-live="polite" hidden></div>
-
-            <button type="submit" id="form-submit" class="btn-primary" style="width:100%; justify-content:center;">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-              Send Enquiry
-            </button>
-
+            <button type="submit" id="form-submit" class="btn-submit mag-btn"><i class="fa-solid fa-paper-plane fa-sm"></i><span>Send Enquiry</span></button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="footer" role="contentinfo" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-inner">
-
-        <div>
-          <div class="footer-logo">
-            <a href="index.html" class="footer-logo-link" aria-label="Back to Cworks home">
-              <img src="Gemini_Generated_Image_h7g71sh7g71sh7g7.png" alt="Cworks" style="width:30px;height:30px;object-fit:contain;border-radius:5px;opacity:0.85;"/>
-              Cworks
-            </a>
-          </div>
-          <p class="footer-tagline">We Build. We Ship.</p>
-        </div>
-
-        <nav aria-label="Footer navigation">
-          <ul class="footer-links" role="list">
-            <li><a href="#includes" class="footer-link">What's Included</a></li>
-            <li><a href="#process"  class="footer-link">Our Process</a></li>
-            <li><a href="#pricing"  class="footer-link">Pricing</a></li>
-            <li><a href="#contact"  class="footer-link">Get in Touch</a></li>
-
-          </ul>
-        </nav>
-
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top-glow" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><a href="index.html" class="footer-logo-link"><img src="cworks-logo-transparent.png" alt="CWORKS" class="footer-logo-img" width="26" height="26"/>CWORKS</a></div>
+        <p class="footer-tagline">We Build. We Ship. We Grow.</p>
+        <p class="footer-origin">&#127482;&#127468; Proudly built in Kampala, Uganda</p>
       </div>
-
-      <p class="footer-copy">
-        Built with · HTML · CSS · JavaScript &nbsp;·&nbsp;
-        <a href="index.html" style="color: var(--accent-blue); text-decoration: none;">← Back to Cworks</a>
-      </p>
-
+      <nav aria-label="Footer navigation"><ul class="footer-links" role="list">
+        <li><a href="#includes" class="footer-link">What's Included</a></li>
+        <li><a href="#process" class="footer-link">Our Process</a></li>
+        <li><a href="#pricing" class="footer-link">Pricing</a></li>
+        <li><a href="#contact" class="footer-link">Get in Touch</a></li>
+        <li><a href="index.html" class="footer-link">&#8592; Back to CWORKS</a></li>
+      </ul></nav>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/thecodehub26/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/codehub26/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://wa.me/256788368997" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
     </div>
+    <p class="footer-copy">&#169; 2025 CWORKS &#8212; Code Works &#183; Kampala, Uganda &#183; Built with HTML &#183; CSS &#183; JavaScript</p>
   </footer>
-
-
-  <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- Antigravity — hero only on this page -->
-  <script src="antigravity.js"></script>
-  <!-- Page script -->
   <script src="script.js"></script>
-
 </body>
 </html>
