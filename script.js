@@ -1,12 +1,60 @@
 // ============================================================
-// CWORKS — Unified JS (main page + service pages)
+// CWORKS — Premium Agency JS v2
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ----------------------------------------------------------
-  // 1. STICKY NAVBAR
-  // ----------------------------------------------------------
+  // 1. CUSTOM CURSOR
+  const cursor   = document.getElementById('cursor');
+  const follower = document.getElementById('cursor-follower');
+  if (cursor && follower && window.innerWidth > 768) {
+    let mx = 0, my = 0, fx = 0, fy = 0;
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    }, { passive: true });
+    (function loop() {
+      fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
+      follower.style.left = fx + 'px'; follower.style.top = fy + 'px';
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  // 2. HERO MOUSE GLOW
+  const heroGlow = document.getElementById('heroGlow');
+  const heroEl   = document.querySelector('.hero');
+  if (heroGlow && heroEl) {
+    heroEl.addEventListener('mousemove', function (e) {
+      const r = heroEl.getBoundingClientRect();
+      heroGlow.style.left = (e.clientX - r.left) + 'px';
+      heroGlow.style.top  = (e.clientY - r.top)  + 'px';
+    }, { passive: true });
+  }
+
+  // 3. SERVICE CARD SPOTLIGHT
+  document.querySelectorAll('.service-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width)  * 100;
+      const y = ((e.clientY - r.top)  / r.height) * 100;
+      const bg = card.querySelector('.service-hover-bg');
+      if (bg) bg.style.background =
+        'radial-gradient(circle at ' + x + '% ' + y + '%, rgba(224,122,95,.07) 0%, transparent 60%)';
+    });
+  });
+
+  // 4. MAGNETIC BUTTONS
+  document.querySelectorAll('.mag-btn').forEach(function (btn) {
+    btn.addEventListener('mousemove', function (e) {
+      const r = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width  / 2)) * 0.22;
+      const dy = (e.clientY - (r.top  + r.height / 2)) * 0.22;
+      btn.style.transform = 'translate(' + dx + 'px,' + dy + 'px) translateY(-1px)';
+    });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+  });
+
+  // 5. STICKY NAVBAR
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', function () {
@@ -14,22 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-
-  // ----------------------------------------------------------
-  // 2. MOBILE MENU
-  // ----------------------------------------------------------
+  // 6. MOBILE MENU
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', function () {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active', open);
+      hamburger.setAttribute('aria-expanded', open);
     });
-
-    mobileMenu.querySelectorAll('.nav-link').forEach(function (link) {
-      link.addEventListener('click', function () {
+    mobileMenu.querySelectorAll('.nav-link').forEach(function (l) {
+      l.addEventListener('click', function () {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
@@ -37,216 +80,94 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-
-  // ----------------------------------------------------------
-  // 3. TYPING ANIMATION
-  // ----------------------------------------------------------
-  const typingPhrases = [
-    'Code Works.',
-    'Creative Work.',
-    'Smart Solutions.',
-    'Real Results.',
-    'Clean Code.',
-    'Websites that Work.',
-  ];
-
-  // Service page phrases (keyed by page path)
-  const serviceTypingPhrases = {
-    'web-development': [
-      'We build clean, fast websites.',
-      'From blank page to live site.',
-      'Design. Code. Deploy.',
-      'Responsive by default.',
-    ],
-    'ui-ux-design': [
-      'Interfaces that feel right.',
-      'Design with the user in mind.',
-      'From wireframe to final pixel.',
-      'Intuitive. Beautiful. Functional.',
-    ],
-    'graphic-design': [
-      'Visuals that tell your story.',
-      'Logos that last.',
-      'Bold identity design.',
-      'From screen to print.',
-    ],
-    'database-management': [
-      'Your data, structured right.',
-      'Fast queries. Reliable storage.',
-      'Built to scale with you.',
-      'MySQL. PHP. Python.',
-    ],
-    'system-building': [
-      'Systems built to your spec.',
-      'Inventory. Booking. Tools.',
-      'Custom software solutions.',
-      'From idea to running system.',
-    ],
-  };
-
-  const typingTarget = document.getElementById('typing-text');
-  const typingCursor = document.querySelector('.typing-cursor');
-
-  if (typingTarget) {
-    // Detect which page we're on
-    const pagePath = window.location.pathname;
-    let phrases = typingPhrases;
-    for (const key in serviceTypingPhrases) {
-      if (pagePath.includes(key)) {
-        phrases = serviceTypingPhrases[key];
-        break;
-      }
-    }
-
-    let phraseIndex = 0;
-    let charIndex   = 0;
-    let isDeleting  = false;
-
-    function type() {
-      const current = phrases[phraseIndex];
-
-      if (isDeleting) {
-        typingTarget.textContent = current.slice(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingTarget.textContent = current.slice(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let delay = isDeleting ? 35 : 72;
-
-      if (!isDeleting && charIndex === current.length) {
-        delay      = 1800;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting  = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        delay       = 350;
-      }
-
-      setTimeout(type, delay);
-    }
-
-    type();
-  }
-
-
-  // ----------------------------------------------------------
-  // 4. SCROLL REVEAL
-  // ----------------------------------------------------------
-  const revealElements = document.querySelectorAll('.reveal');
-
+  // 7. SCROLL REVEAL
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed', 'visible');
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-    revealElements.forEach(function (el) { observer.observe(el); });
+    }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('[data-reveal], .reveal').forEach(function (el) { obs.observe(el); });
   } else {
-    revealElements.forEach(function (el) { el.classList.add('visible'); });
+    document.querySelectorAll('[data-reveal], .reveal').forEach(function (el) {
+      el.classList.add('revealed', 'visible');
+    });
   }
 
+  // 8. ANIMATED COUNTERS
+  const statNums = document.querySelectorAll('.stat-num[data-count]');
+  if ('IntersectionObserver' in window && statNums.length) {
+    const cObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const t0 = performance.now();
+        const dur = 1400;
+        (function tick(now) {
+          const p = Math.min((now - t0) / dur, 1);
+          const e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * e);
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    statNums.forEach(function (el) { cObs.observe(el); });
+  }
 
-  // ----------------------------------------------------------
-  // 5. ACTIVE NAV LINK (main page only — section-based)
-  // ----------------------------------------------------------
+  // 9. ACTIVE NAV LINK
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links .nav-link');
-
   if (sections.length && navLinks.length) {
-    const sectionObserver = new IntersectionObserver(function (entries) {
+    const sObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          navLinks.forEach(function (link) { link.classList.remove('active'); });
-          const active = document.querySelector(
-            '.nav-links a[href="#' + entry.target.id + '"]'
-          );
-          if (active) active.classList.add('active');
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          const m = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+          if (m) m.classList.add('active');
         }
       });
     }, { threshold: 0.35 });
-
-    sections.forEach(function (s) { sectionObserver.observe(s); });
+    sections.forEach(function (s) { sObs.observe(s); });
   }
 
+  // 10. CARD TILT
+  document.querySelectorAll('.why-card, .team-card, .stat-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform = 'translateY(-4px) rotateX(' + (-y*4) + 'deg) rotateY(' + (x*4) + 'deg)';
+    });
+    card.addEventListener('mouseleave', function () { card.style.transform = ''; });
+  });
 
-  // ----------------------------------------------------------
-  // 6. SERVICE PAGE — active nav on scroll
-  // ----------------------------------------------------------
-  if (window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html')) {
-    const pageSections = document.querySelectorAll('section[id]');
-    const pageNavLinks = document.querySelectorAll('.nav-links .nav-link');
-    if (pageSections.length && pageNavLinks.length) {
-      const pageObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            pageNavLinks.forEach(function (l) { l.classList.remove('active'); });
-            const match = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
-            if (match) match.classList.add('active');
-          }
-        });
-      }, { threshold: 0.3 });
-      pageSections.forEach(function (s) { pageObserver.observe(s); });
-    }
-  }
-
-
-  // ----------------------------------------------------------
-  // 7. BUTTON MICRO-INTERACTIONS — ripple effect
-  // ----------------------------------------------------------
-  document.querySelectorAll('.btn-primary, .btn-secondary, .btn-submit').forEach(function (btn) {
+  // 11. RIPPLE
+  document.querySelectorAll('.btn-primary,.btn-secondary,.btn-ghost,.btn-submit').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
-      const rect  = btn.getBoundingClientRect();
+      const r = btn.getBoundingClientRect();
       const ripple = document.createElement('span');
-      const size   = Math.max(rect.width, rect.height);
-      ripple.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${e.clientX - rect.left - size/2}px;
-        top: ${e.clientY - rect.top - size/2}px;
-        background: rgba(255,255,255,0.25);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: ripple-anim 0.5s ease-out forwards;
-        pointer-events: none;
-      `;
-      // Ensure button has position relative
+      const size = Math.max(r.width, r.height);
+      ripple.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;'
+        + 'left:' + (e.clientX - r.left - size/2) + 'px;top:' + (e.clientY - r.top - size/2) + 'px;'
+        + 'background:rgba(255,255,255,.16);border-radius:50%;transform:scale(0);'
+        + 'animation:ripple-anim .5s ease-out forwards;pointer-events:none;';
       if (getComputedStyle(btn).position === 'static') btn.style.position = 'relative';
       btn.style.overflow = 'hidden';
       btn.appendChild(ripple);
       ripple.addEventListener('animationend', function () { ripple.remove(); });
     });
   });
-
-  // Inject ripple keyframe if not present
   if (!document.getElementById('ripple-style')) {
-    const style = document.createElement('style');
-    style.id = 'ripple-style';
-    style.textContent = '@keyframes ripple-anim { to { transform: scale(2.5); opacity: 0; } }';
-    document.head.appendChild(style);
+    const s = document.createElement('style');
+    s.id = 'ripple-style';
+    s.textContent = '@keyframes ripple-anim{to{transform:scale(2.5);opacity:0;}}';
+    document.head.appendChild(s);
   }
-
-
-  // ----------------------------------------------------------
-  // 8. CARD TILT EFFECT (subtle)
-  // ----------------------------------------------------------
-  document.querySelectorAll('.service-card, .project-card, .pricing-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      const rect  = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transform = `translateY(-5px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
-    });
-    card.addEventListener('mouseleave', function () {
-      card.style.transform = '';
-    });
-  });
 
 }); // end DOMContentLoaded
 
@@ -255,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // CONTACT FORM — Web3Forms + Discord webhook
 // ----------------------------------------------------------
 (function () {
-  const form      = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form');
   if (!form) return;
 
   const submitBtn  = document.getElementById('form-submit');
@@ -263,101 +184,82 @@ document.addEventListener('DOMContentLoaded', function () {
   const nameInput  = document.getElementById('contact-name');
   const emailInput = document.getElementById('contact-email');
   const phoneInput = document.getElementById('contact-phone');
+  const tierInput  = document.getElementById('contact-tier');
   const nameError  = document.getElementById('name-error');
   const emailError = document.getElementById('email-error');
   const phoneError = document.getElementById('phone-error');
+  const tierError  = document.getElementById('tier-error');
 
-  function validateName() {
-    if (!nameInput.value.trim()) {
-      nameError.textContent = 'Please enter your name.';
-      nameInput.classList.add('input-error');
-      return false;
-    }
-    nameError.textContent = '';
-    nameInput.classList.remove('input-error');
-    return true;
-  }
-  function validateEmail() {
-    const val = emailInput.value.trim();
-    if (!val) {
-      emailError.textContent = 'Please enter your email.';
-      emailInput.classList.add('input-error');
-      return false;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-      emailError.textContent = 'Please enter a valid email.';
-      emailInput.classList.add('input-error');
-      return false;
-    }
-    emailError.textContent = '';
-    emailInput.classList.remove('input-error');
-    return true;
-  }
-  function validatePhone() {
-    if (!phoneInput || !phoneInput.value.trim()) {
-      if (phoneError) phoneError.textContent = 'Please enter your phone number.';
-      if (phoneInput) phoneInput.classList.add('input-error');
-      return false;
-    }
-    if (phoneError) phoneError.textContent = '';
-    if (phoneInput) phoneInput.classList.remove('input-error');
-    return true;
+  function val(input, errEl, check, msg) {
+    if (!input) return true;
+    const ok = check(input.value.trim());
+    if (errEl) errEl.textContent = ok ? '' : msg;
+    input.classList.toggle('input-error', !ok);
+    return ok;
   }
 
-  if (nameInput)  nameInput.addEventListener('input',  validateName);
-  if (emailInput) emailInput.addEventListener('input', validateEmail);
-  if (phoneInput) phoneInput.addEventListener('input', validatePhone);
+  const vName  = function() { return val(nameInput,  nameError,  function(v){ return v.length > 0; }, 'Please enter your name.'); };
+  const vEmail = function() { return val(emailInput, emailError, function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }, 'Please enter a valid email.'); };
+  const vPhone = function() { return val(phoneInput, phoneError, function(v){ return v.length > 0; }, 'Please enter your phone number.'); };
+  const vTier  = function() { return val(tierInput,  tierError,  function(v){ return v.length > 0; }, 'Please select a service tier.'); };
+
+  if (nameInput)  nameInput.addEventListener('input',  vName);
+  if (emailInput) emailInput.addEventListener('input', vEmail);
+  if (phoneInput) phoneInput.addEventListener('input', vPhone);
+  if (tierInput)  tierInput.addEventListener('change', vTier);
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    const phoneOk = phoneInput ? validatePhone() : true;
-    if (!validateName() | !validateEmail() | !phoneOk) return;
+    const hasTier = !!tierInput;
+    const ok = (vName() & vEmail() & vPhone() & (!hasTier || vTier()));
+    if (!ok) return;
 
-    const originalHTML   = submitBtn.innerHTML;
-    submitBtn.innerHTML  = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled   = true;
-    feedback.hidden      = true;
-    feedback.className   = 'form-feedback';
+    const origHTML = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+    submitBtn.disabled  = true;
+    feedback.hidden     = true;
+    feedback.className  = 'form-feedback';
 
     try {
-      const formData = new FormData(form);
-      const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
-      const data     = await response.json();
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+      const data = await res.json();
 
-      if (response.ok) {
-        const name    = nameInput.value.trim();
-        const email   = emailInput.value.trim();
+      if (res.ok) {
+        const name    = nameInput  ? nameInput.value.trim()  : 'N/A';
+        const email   = emailInput ? emailInput.value.trim() : 'N/A';
         const phone   = phoneInput ? phoneInput.value.trim() : 'N/A';
+        const tier    = tierInput  ? tierInput.value         : '';
         const msgEl   = form.querySelector('textarea');
         const message = msgEl ? msgEl.value.trim() : 'N/A';
 
-        await fetch('https://discord.com/api/webhooks/1493186929200730232/FEOmFACU4P64xHDYXEieG20kWcHU306K0qlwxspmWnumiJg9VmjxMMXC1oc7inaJst_7', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            username:   'Cworks Website',
-            embeds: [{
-              title:  '📬 New Contact Form Submission',
-              color:  0x415a77,
-              fields: [
-                { name: '👤 Name',    value: name,    inline: true },
-                { name: '📧 Email',   value: email,   inline: true },
-                { name: '📞 Phone',   value: phone,   inline: true },
-                { name: '💬 Message', value: message, inline: false }
-              ],
-              footer:    { text: 'Sent from Cworks website' },
-              timestamp: new Date().toISOString()
-            }]
-          })
-        });
+        const fields = [
+          { name: '👤 Name',    value: name,  inline: true },
+          { name: '📧 Email',   value: email, inline: true },
+          { name: '📞 Phone',   value: phone, inline: true }
+        ];
+        if (tier) fields.push({ name: '📦 Tier', value: tier, inline: false });
+        fields.push({ name: '💬 Message', value: message || '—', inline: false });
 
-        feedback.textContent = '✓ Message sent! We\'ll get back to you soon.';
+        await fetch(
+          'https://discord.com/api/webhooks/1493186929200730232/FEOmFACU4P64xHDYXEieG20kWcHU306K0qlwxspmWnumiJg9VmjxMMXC1oc7inaJst_7',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: 'CWORKS Website',
+              embeds: [{
+                title: '📬 New Enquiry — CWORKS', color: 0xe07a5f, fields,
+                footer: { text: 'Sent from CWORKS website' }, timestamp: new Date().toISOString()
+              }]
+            })
+          }
+        );
+
+        feedback.textContent = '✓ Message sent! We\'ll get back to you within 24 hours.';
         feedback.classList.add('form-feedback--success');
         feedback.hidden = false;
         form.reset();
-        if (nameError)  nameError.textContent  = '';
-        if (emailError) emailError.textContent = '';
-        if (phoneError) phoneError.textContent = '';
+        [nameError, emailError, phoneError, tierError].forEach(function(el){ if (el) el.textContent = ''; });
       } else {
         feedback.textContent = '✗ ' + (data.message || 'Something went wrong. Please try again.');
         feedback.classList.add('form-feedback--error');
@@ -368,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function () {
       feedback.classList.add('form-feedback--error');
       feedback.hidden = false;
     } finally {
-      submitBtn.innerHTML = originalHTML;
+      submitBtn.innerHTML = origHTML;
       submitBtn.disabled  = false;
     }
   });
