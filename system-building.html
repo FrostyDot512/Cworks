@@ -29,14 +29,27 @@
     .meta-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--text-secondary)}
     .meta-item i{color:var(--accent);font-size:.8rem}
     .meta-item strong{color:var(--white)}
-    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    .include-card{background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .3s,transform .3s}
-    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-3px)}
-    .include-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-light);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:1rem}
-    .include-card h3{font-size:.97rem;font-weight:700;margin-bottom:.45rem}
-    .include-card p{font-size:.81rem;color:var(--text-secondary);line-height:1.65}
+    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .include-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:1.75rem;transition:border-color .3s,transform .3s,background .3s,box-shadow .3s;position:relative;overflow:hidden}
+    .include-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-4px);background:var(--bg-card-h);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+    .include-card:hover::before{opacity:1}
+    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s,box-shadow .3s}
+    .include-card:hover .include-icon{transform:scale(1.12) rotate(-4deg);box-shadow:0 0 20px rgba(224,122,95,.25)}
+    .include-card h3{font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--text)}
+    .include-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+    .process-steps{display:flex;flex-direction:column;gap:0}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
+    .process-step:last-child{border-bottom:none}
+    .process-step:hover{padding-left:8px}
+    .process-step-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0;transition:box-shadow .3s,transform .3s}
+    .process-step:hover .process-step-icon{box-shadow:0 0 16px rgba(224,122,95,.3);transform:scale(1.08)}
+    .process-step-number{display:none}
+    .process-step-label{display:inline-block;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:var(--accent);background:var(--accent-low);border:1px solid var(--accent-glow);border-radius:4px;padding:.2rem .55rem;margin-bottom:.65rem}
+    .process-step-title{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem}
+    .process-step-desc{font-size:.86rem;color:var(--text-muted);line-height:1.75}
     @media(max-width:900px){.includes-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}}
+    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}.process-step{grid-template-columns:44px 1fr;gap:1.25rem}}
   </style>
 </head>
 <body>
@@ -73,7 +86,7 @@
     </div>
     <div class="service-hero-content">
       <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
-      <div class="service-hero-eyebrow reveal"><i class="fa-solid server fa-xs"></i><span>System Building</span></div>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid fa-server fa-xs"></i><span>System Building</span></div>
       <h1 class="service-hero-title reveal">Custom Systems Built<br/><em>To Your Spec</em></h1>
       <p class="service-hero-sub reveal">We build custom web-based systems for businesses — inventory management, booking systems, POS tools, and internal dashboards — designed exactly around how you work.</p>
       <div class="service-hero-actions reveal">
@@ -81,10 +94,10 @@
         <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
       </div>
       <div class="service-hero-meta reveal">
-        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>2 weeks</strong> delivery</span></div>
-        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 500,000</strong></span></div>
-        <div class="meta-item"><i class="fa-solid code"></i><span><strong>PHP &amp; Python</strong></span></div>
-        <div class="meta-item"><i class="fa-solid database"></i><span><strong>MySQL</strong> included</span></div>
+        <div class="meta-item"><i class="fa-solid fa-clock"></i><span>From <strong>2 weeks</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid fa-coins"></i><span>From <strong>UGX 500,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-code"></i><span><strong>PHP &amp; Python</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-database"></i><span><strong>MySQL</strong> included</span></div>
       </div>
     </div>
   </section>
@@ -98,32 +111,32 @@
       </div>
       <div class="includes-grid">
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid gear"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-gear"></i></div>
           <h3>Custom-Built to Spec</h3>
           <p>No templates. Every system is built around your exact workflow, user roles, and business rules — nothing more, nothing less.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid users"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-users"></i></div>
           <h3>Multi-User &amp; Role-Based</h3>
           <p>Multiple user accounts with different permission levels — staff, managers, admins — each seeing only what they need.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid chart-bar"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-chart-bar"></i></div>
           <h3>Reports &amp; Dashboards</h3>
           <p>Built-in reporting with exportable data, summary dashboards, and key metrics visible at a glance.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid database"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-database"></i></div>
           <h3>Database Included</h3>
           <p>Every system includes a properly designed MySQL database — schema, relationships, indexes, and backups configured.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid mobile-screen"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-mobile-screen"></i></div>
           <h3>Web-Based Access</h3>
           <p>Runs in any browser — no installation required. Your team can access it from any device on your network or online.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid graduation-cap"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-graduation-cap"></i></div>
           <h3>Training &amp; Documentation</h3>
           <p>We train your team on how to use the system and deliver documentation so you're never dependent on us to operate it.</p>
         </div>
@@ -140,43 +153,49 @@
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <div class="process-step-number">01</div>
+          <div class="process-step-icon"><i class="fa-solid fa-list-check"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">01</span>
             <h3 class="process-step-title">Discovery &amp; Requirements</h3>
             <p class="process-step-desc">We document every feature, user role, and edge case before writing any code. Both parties sign off before work begins.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">02</div>
+          <div class="process-step-icon"><i class="fa-solid fa-file-lines"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">02</span>
             <h3 class="process-step-title">Proposal &amp; Agreement</h3>
             <p class="process-step-desc">We send a clear scope with cost breakdown and timeline. Anything outside the agreed spec is quoted separately — no surprise charges.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">03</div>
+          <div class="process-step-icon"><i class="fa-solid fa-sitemap"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">03</span>
             <h3 class="process-step-title">Architecture Design</h3>
             <p class="process-step-desc">We design the database schema and system architecture and share it with you for review before building.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">04</div>
+          <div class="process-step-icon"><i class="fa-solid fa-code"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">04</span>
             <h3 class="process-step-title">Build &amp; Testing</h3>
             <p class="process-step-desc">We build module by module, sharing progress at each stage. Every feature is tested against requirements before handover.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">05</div>
+          <div class="process-step-icon"><i class="fa-solid fa-rotate"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">05</span>
             <h3 class="process-step-title">Review &amp; Revisions</h3>
             <p class="process-step-desc">You test the system in a staging environment and report issues. We work through agreed revision rounds until everything is right.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">06</div>
+          <div class="process-step-icon"><i class="fa-solid fa-rocket"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">06</span>
             <h3 class="process-step-title">Deployment &amp; Training</h3>
             <p class="process-step-desc">We deploy to your environment, set up user accounts, train your team, and deliver full documentation and source code.</p>
           </div>
@@ -280,10 +299,10 @@
           <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
           <div class="faq-inline">
             <p class="faq-inline-label font-code">// faq</p>
-                        <details class="faq-item"><summary class="faq-question">What kind of systems do you build? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Inventory management, POS systems, booking and reservation systems, school management, HR tools, and any custom workflow tool. If you can describe it, we can build it.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Is it web-based or desktop? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>We primarily build web-based systems (runs in a browser). Desktop applications are possible — mention this when enquiring.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Will I own the source code? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. You receive the complete source code on delivery. You're not locked in to any ongoing relationship.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can you add features later? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Post-launch additions are quoted separately. Because we document the codebase well, future changes are straightforward.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What kind of systems do you build? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Inventory management, POS systems, booking and reservation systems, school management, HR tools, and any custom workflow tool. If you can describe it, we can build it.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Is it web-based or desktop? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>We primarily build web-based systems (runs in a browser). Desktop applications are possible — mention this when enquiring.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Will I own the source code? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. You receive the complete source code on delivery. You're not locked in to any ongoing relationship.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can you add features later? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. Post-launch additions are quoted separately. Because we document the codebase well, future changes are straightforward.</p></div></details>
           </div>
         </div>
         <div class="contact-form reveal reveal-delay-2">

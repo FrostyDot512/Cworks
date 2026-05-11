@@ -29,14 +29,27 @@
     .meta-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--text-secondary)}
     .meta-item i{color:var(--accent);font-size:.8rem}
     .meta-item strong{color:var(--white)}
-    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    .include-card{background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .3s,transform .3s}
-    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-3px)}
-    .include-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-light);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:1rem}
-    .include-card h3{font-size:.97rem;font-weight:700;margin-bottom:.45rem}
-    .include-card p{font-size:.81rem;color:var(--text-secondary);line-height:1.65}
+    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .include-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:1.75rem;transition:border-color .3s,transform .3s,background .3s,box-shadow .3s;position:relative;overflow:hidden}
+    .include-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-4px);background:var(--bg-card-h);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+    .include-card:hover::before{opacity:1}
+    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s,box-shadow .3s}
+    .include-card:hover .include-icon{transform:scale(1.12) rotate(-4deg);box-shadow:0 0 20px rgba(224,122,95,.25)}
+    .include-card h3{font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--text)}
+    .include-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+    .process-steps{display:flex;flex-direction:column;gap:0}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
+    .process-step:last-child{border-bottom:none}
+    .process-step:hover{padding-left:8px}
+    .process-step-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0;transition:box-shadow .3s,transform .3s}
+    .process-step:hover .process-step-icon{box-shadow:0 0 16px rgba(224,122,95,.3);transform:scale(1.08)}
+    .process-step-number{display:none}
+    .process-step-label{display:inline-block;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:var(--accent);background:var(--accent-low);border:1px solid var(--accent-glow);border-radius:4px;padding:.2rem .55rem;margin-bottom:.65rem}
+    .process-step-title{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem}
+    .process-step-desc{font-size:.86rem;color:var(--text-muted);line-height:1.75}
     @media(max-width:900px){.includes-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}}
+    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}.process-step{grid-template-columns:44px 1fr;gap:1.25rem}}
   </style>
 </head>
 <body>
@@ -73,7 +86,7 @@
     </div>
     <div class="service-hero-content">
       <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
-      <div class="service-hero-eyebrow reveal"><i class="fa-solid database fa-xs"></i><span>Database Management</span></div>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid fa-database fa-xs"></i><span>Database Management</span></div>
       <h1 class="service-hero-title reveal">Your Data,<br/><em>Structured Right</em></h1>
       <p class="service-hero-sub reveal">We design clean, optimised databases for web applications and business systems — fast queries, secure storage, and properly documented for your developers.</p>
       <div class="service-hero-actions reveal">
@@ -81,10 +94,10 @@
         <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
       </div>
       <div class="service-hero-meta reveal">
-        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>3 days</strong> delivery</span></div>
-        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 200,000</strong></span></div>
-        <div class="meta-item"><i class="fa-solid database"></i><span><strong>MySQL</strong> specialised</span></div>
-        <div class="meta-item"><i class="fa-solid shield-halved"></i><span><strong>Secure</strong> by design</span></div>
+        <div class="meta-item"><i class="fa-solid fa-clock"></i><span>From <strong>3 days</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid fa-coins"></i><span>From <strong>UGX 200,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-database"></i><span><strong>MySQL</strong> specialised</span></div>
+        <div class="meta-item"><i class="fa-solid fa-shield-halved"></i><span><strong>Secure</strong> by design</span></div>
       </div>
     </div>
   </section>
@@ -98,32 +111,32 @@
       </div>
       <div class="includes-grid">
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid table-columns"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-table-columns"></i></div>
           <h3>Schema Design</h3>
           <p>A clean, normalised database schema designed around your actual data and usage patterns — with an ER diagram included.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid diagram-project"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-diagram-project"></i></div>
           <h3>ER Diagram</h3>
           <p>A visual entity-relationship diagram showing every table, relationship, and data type — easy to share with developers.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid bolt"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-bolt"></i></div>
           <h3>Query Optimisation</h3>
           <p>Indexes, query analysis, and performance tuning so your database stays fast as data grows.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid users"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-users"></i></div>
           <h3>User Access Control</h3>
           <p>Role-based access control — who can read, write, update, or delete which data — configured and documented.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid floppy-disk"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-floppy-disk"></i></div>
           <h3>Backup Configuration</h3>
           <p>Automated backup setup with a tested restore process. Your data is protected from day one.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid file-lines"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-file-lines"></i></div>
           <h3>Full Documentation</h3>
           <p>Complete schema documentation including field definitions, relationships, and usage notes for your development team.</p>
         </div>
@@ -140,43 +153,49 @@
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <div class="process-step-number">01</div>
+          <div class="process-step-icon"><i class="fa-solid fa-list-check"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">01</span>
             <h3 class="process-step-title">Requirements Gathering</h3>
             <p class="process-step-desc">We document every entity your application needs to store, how data relates, and what queries the system will need to run.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">02</div>
+          <div class="process-step-icon"><i class="fa-solid fa-table-columns"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">02</span>
             <h3 class="process-step-title">Schema Design</h3>
             <p class="process-step-desc">We design the database structure — tables, columns, data types, relationships, and constraints — and share it with you before building.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">03</div>
+          <div class="process-step-icon"><i class="fa-solid fa-circle-check"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">03</span>
             <h3 class="process-step-title">Review &amp; Approval</h3>
             <p class="process-step-desc">You review the schema design and ER diagram. We discuss and adjust until the structure matches your requirements exactly.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">04</div>
+          <div class="process-step-icon"><i class="fa-solid fa-wrench"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">04</span>
             <h3 class="process-step-title">Build &amp; Configure</h3>
             <p class="process-step-desc">We build the database, set up indexes, configure access control, and populate sample data so you can test immediately.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">05</div>
+          <div class="process-step-icon"><i class="fa-solid fa-right-left"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">05</span>
             <h3 class="process-step-title">Migration (if needed)</h3>
             <p class="process-step-desc">If you're moving from an existing system or spreadsheets, we handle the migration and verify data integrity after the transfer.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">06</div>
+          <div class="process-step-icon"><i class="fa-solid fa-box-archive"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">06</span>
             <h3 class="process-step-title">Handover &amp; Support</h3>
             <p class="process-step-desc">We deliver documentation, backup configuration, and access credentials — and stay available post-handover for questions.</p>
           </div>
@@ -281,10 +300,10 @@
           <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
           <div class="faq-inline">
             <p class="faq-inline-label font-code">// faq</p>
-                        <details class="faq-item"><summary class="faq-question">What database technology do you use? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>We primarily work with MySQL. We can also work with SQLite for lightweight applications or PostgreSQL if your stack requires it.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can you migrate data from our existing system? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. We handle migrations from spreadsheets, legacy databases, and CSV exports. We verify data integrity after every migration.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Do you connect the database to a website or app? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. We can integrate the database with a PHP or Python backend. If you need a full web application, we'll scope that separately.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">What if our data requirements change later? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Good schema design accounts for growth. We document the structure so future developers can extend it without breaking what's already there.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What database technology do you use? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>We primarily work with MySQL. We can also work with SQLite for lightweight applications or PostgreSQL if your stack requires it.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can you migrate data from our existing system? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. We handle migrations from spreadsheets, legacy databases, and CSV exports. We verify data integrity after every migration.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Do you connect the database to a website or app? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. We can integrate the database with a PHP or Python backend. If you need a full web application, we'll scope that separately.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What if our data requirements change later? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Good schema design accounts for growth. We document the structure so future developers can extend it without breaking what's already there.</p></div></details>
           </div>
         </div>
         <div class="contact-form reveal reveal-delay-2">

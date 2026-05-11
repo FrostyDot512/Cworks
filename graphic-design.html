@@ -29,14 +29,27 @@
     .meta-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--text-secondary)}
     .meta-item i{color:var(--accent);font-size:.8rem}
     .meta-item strong{color:var(--white)}
-    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    .include-card{background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .3s,transform .3s}
-    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-3px)}
-    .include-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-light);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:1rem}
-    .include-card h3{font-size:.97rem;font-weight:700;margin-bottom:.45rem}
-    .include-card p{font-size:.81rem;color:var(--text-secondary);line-height:1.65}
+    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .include-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:1.75rem;transition:border-color .3s,transform .3s,background .3s,box-shadow .3s;position:relative;overflow:hidden}
+    .include-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-4px);background:var(--bg-card-h);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+    .include-card:hover::before{opacity:1}
+    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s,box-shadow .3s}
+    .include-card:hover .include-icon{transform:scale(1.12) rotate(-4deg);box-shadow:0 0 20px rgba(224,122,95,.25)}
+    .include-card h3{font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--text)}
+    .include-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+    .process-steps{display:flex;flex-direction:column;gap:0}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
+    .process-step:last-child{border-bottom:none}
+    .process-step:hover{padding-left:8px}
+    .process-step-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0;transition:box-shadow .3s,transform .3s}
+    .process-step:hover .process-step-icon{box-shadow:0 0 16px rgba(224,122,95,.3);transform:scale(1.08)}
+    .process-step-number{display:none}
+    .process-step-label{display:inline-block;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:var(--accent);background:var(--accent-low);border:1px solid var(--accent-glow);border-radius:4px;padding:.2rem .55rem;margin-bottom:.65rem}
+    .process-step-title{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem}
+    .process-step-desc{font-size:.86rem;color:var(--text-muted);line-height:1.75}
     @media(max-width:900px){.includes-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}}
+    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}.process-step{grid-template-columns:44px 1fr;gap:1.25rem}}
   </style>
 </head>
 <body>
@@ -73,7 +86,7 @@
     </div>
     <div class="service-hero-content">
       <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
-      <div class="service-hero-eyebrow reveal"><i class="fa-solid paintbrush fa-xs"></i><span>Graphic Design</span></div>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid fa-paintbrush fa-xs"></i><span>Graphic Design</span></div>
       <h1 class="service-hero-title reveal">Visuals That Tell<br/>Your <em>Brand Story</em></h1>
       <p class="service-hero-sub reveal">We create bold logos, brand identities, and visual assets that make your brand unforgettable — from screen to print.</p>
       <div class="service-hero-actions reveal">
@@ -81,10 +94,10 @@
         <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
       </div>
       <div class="service-hero-meta reveal">
-        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>3 days</strong> delivery</span></div>
-        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 80,000</strong></span></div>
-        <div class="meta-item"><i class="fa-solid file-export"></i><span><strong>All formats</strong> delivered</span></div>
-        <div class="meta-item"><i class="fa-solid rotate"></i><span><strong>Multiple</strong> concepts</span></div>
+        <div class="meta-item"><i class="fa-solid fa-clock"></i><span>From <strong>3 days</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid fa-coins"></i><span>From <strong>UGX 80,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-file-export"></i><span><strong>All formats</strong> delivered</span></div>
+        <div class="meta-item"><i class="fa-solid fa-rotate"></i><span><strong>Multiple</strong> concepts</span></div>
       </div>
     </div>
   </section>
@@ -98,32 +111,32 @@
       </div>
       <div class="includes-grid">
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid pen-nib"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-pen-nib"></i></div>
           <h3>Custom Logo Design</h3>
           <p>A unique logo built around your brand values and audience — not a template. Delivered in vector format.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid palette"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-palette"></i></div>
           <h3>Brand Identity Pack</h3>
           <p>Colour palette, typography selection, logo usage rules, and visual tone — everything to keep your brand consistent.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid image"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-image"></i></div>
           <h3>Print-Ready Files</h3>
           <p>All deliverables exported at the correct resolution and colour profile for print (CMYK) and digital (RGB).</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid vector-square"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-vector-square"></i></div>
           <h3>Vector Source Files</h3>
           <p>You own the source Figma files — fully editable, scalable to any size, ready for any future use.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid share-nodes"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-share-nodes"></i></div>
           <h3>Social Media Assets</h3>
           <p>Profile images, cover photos, post templates — sized and formatted for Instagram, LinkedIn, and more.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid file-lines"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-file-lines"></i></div>
           <h3>Brand Style Guide</h3>
           <p>A simple document covering how to use your brand assets consistently across all touchpoints.</p>
         </div>
@@ -140,43 +153,49 @@
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <div class="process-step-number">01</div>
+          <div class="process-step-icon"><i class="fa-solid fa-comments"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">01</span>
             <h3 class="process-step-title">Brief & Mood Board</h3>
             <p class="process-step-desc">We talk through your brand, your audience, and the feeling you want to create. You share references and we build a mood board to align direction.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">02</div>
+          <div class="process-step-icon"><i class="fa-solid fa-lightbulb"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">02</span>
             <h3 class="process-step-title">Concept Development</h3>
             <p class="process-step-desc">We develop initial concepts — typically 2&#8211;3 directions — and present them with rationale so you understand the thinking behind each one.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">03</div>
+          <div class="process-step-icon"><i class="fa-solid fa-comment-dots"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">03</span>
             <h3 class="process-step-title">Feedback & Direction</h3>
             <p class="process-step-desc">You pick the direction you connect with most and give feedback. We refine from there rather than starting from scratch.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">04</div>
+          <div class="process-step-icon"><i class="fa-solid fa-pen-ruler"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">04</span>
             <h3 class="process-step-title">Design Refinement</h3>
             <p class="process-step-desc">We take your feedback and iterate on the chosen direction until it's right. Revision rounds are included based on your tier.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">05</div>
+          <div class="process-step-icon"><i class="fa-solid fa-images"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">05</span>
             <h3 class="process-step-title">Asset Production</h3>
             <p class="process-step-desc">Once the design is approved, we produce all the required assets in every format — web exports, print files, social templates.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">06</div>
+          <div class="process-step-icon"><i class="fa-solid fa-box-open"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">06</span>
             <h3 class="process-step-title">Delivery</h3>
             <p class="process-step-desc">We package and deliver all files with a clear handover document. You receive everything you need to use your brand independently.</p>
           </div>
@@ -276,10 +295,10 @@
           <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
           <div class="faq-inline">
             <p class="faq-inline-label font-code">// faq</p>
-                        <details class="faq-item"><summary class="faq-question">What file formats will I receive? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Vector files (SVG, PDF) for print and web-optimised exports (PNG, JPG) for digital. All files are clearly named and organised.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">What tools do you use? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>We design in Figma. If you need editable source files in another format, let us know and we'll discuss what's possible.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can you match my existing brand? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Share your existing brand guidelines, colours, and fonts and we'll design within them.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Do you design for print and digital? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Print files are delivered at the correct resolution and colour profile (CMYK where needed). Digital exports are optimised for web.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What file formats will I receive? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Vector files (SVG, PDF) for print and web-optimised exports (PNG, JPG) for digital. All files are clearly named and organised.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What tools do you use? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>We design in Figma. If you need editable source files in another format, let us know and we'll discuss what's possible.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can you match my existing brand? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. Share your existing brand guidelines, colours, and fonts and we'll design within them.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Do you design for print and digital? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. Print files are delivered at the correct resolution and colour profile (CMYK where needed). Digital exports are optimised for web.</p></div></details>
           </div>
         </div>
         <div class="contact-form reveal reveal-delay-2">

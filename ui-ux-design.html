@@ -29,14 +29,27 @@
     .meta-item{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--text-secondary)}
     .meta-item i{color:var(--accent);font-size:.8rem}
     .meta-item strong{color:var(--white)}
-    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-    .include-card{background:var(--bg-deep);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color .3s,transform .3s}
-    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-3px)}
-    .include-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--accent-light);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;margin-bottom:1rem}
-    .include-card h3{font-size:.97rem;font-weight:700;margin-bottom:.45rem}
-    .include-card p{font-size:.81rem;color:var(--text-secondary);line-height:1.65}
+    .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .include-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md);padding:1.75rem;transition:border-color .3s,transform .3s,background .3s,box-shadow .3s;position:relative;overflow:hidden}
+    .include-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+    .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-4px);background:var(--bg-card-h);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+    .include-card:hover::before{opacity:1}
+    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s,box-shadow .3s}
+    .include-card:hover .include-icon{transform:scale(1.12) rotate(-4deg);box-shadow:0 0 20px rgba(224,122,95,.25)}
+    .include-card h3{font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--text)}
+    .include-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
+    .process-steps{display:flex;flex-direction:column;gap:0}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
+    .process-step:last-child{border-bottom:none}
+    .process-step:hover{padding-left:8px}
+    .process-step-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0;transition:box-shadow .3s,transform .3s}
+    .process-step:hover .process-step-icon{box-shadow:0 0 16px rgba(224,122,95,.3);transform:scale(1.08)}
+    .process-step-number{display:none}
+    .process-step-label{display:inline-block;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;color:var(--accent);background:var(--accent-low);border:1px solid var(--accent-glow);border-radius:4px;padding:.2rem .55rem;margin-bottom:.65rem}
+    .process-step-title{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem}
+    .process-step-desc{font-size:.86rem;color:var(--text-muted);line-height:1.75}
     @media(max-width:900px){.includes-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}}
+    @media(max-width:600px){.includes-grid{grid-template-columns:1fr}.service-hero-meta{gap:1.5rem}.process-step{grid-template-columns:44px 1fr;gap:1.25rem}}
   </style>
 </head>
 <body>
@@ -73,7 +86,7 @@
     </div>
     <div class="service-hero-content">
       <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
-      <div class="service-hero-eyebrow reveal"><i class="fa-solid mobile-screen-button fa-xs"></i><span>UI/UX Design</span></div>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid fa-mobile-screen-button fa-xs"></i><span>UI/UX Design</span></div>
       <h1 class="service-hero-title reveal">Interfaces That<br/>Feel <em>Exactly Right</em></h1>
       <p class="service-hero-sub reveal">We design digital experiences that are intuitive, beautiful, and built around real users — delivered as developer-ready Figma files.</p>
       <div class="service-hero-actions reveal">
@@ -81,10 +94,10 @@
         <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
       </div>
       <div class="service-hero-meta reveal">
-        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>3 days</strong> delivery</span></div>
-        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 100,000</strong></span></div>
-        <div class="meta-item"><i class="fa-solid brands fa-figma"></i><span><strong>Figma</strong> delivered</span></div>
-        <div class="meta-item"><i class="fa-solid rotate"></i><span><strong>Multiple</strong> revision rounds</span></div>
+        <div class="meta-item"><i class="fa-solid fa-clock"></i><span>From <strong>3 days</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid fa-coins"></i><span>From <strong>UGX 100,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-brands fa-figma"></i><span><strong>Figma</strong> delivered</span></div>
+        <div class="meta-item"><i class="fa-solid fa-rotate"></i><span><strong>Multiple</strong> revision rounds</span></div>
       </div>
     </div>
   </section>
@@ -98,32 +111,32 @@
       </div>
       <div class="includes-grid">
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid layer-group"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-layer-group"></i></div>
           <h3>High-Fidelity Mockups</h3>
           <p>Pixel-perfect screen designs in Figma, fully styled with your brand colors, fonts, and visual language.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid mobile-screen"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-mobile-screen"></i></div>
           <h3>Mobile-Responsive Layouts</h3>
           <p>Designs built for every screen size — mobile, tablet, and desktop — from the very first frame.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid hand-pointer"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-hand-pointer"></i></div>
           <h3>Interactive Prototype</h3>
           <p>Clickable Figma prototype showing real user flows so you can experience the design before it's built.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid cubes"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-cubes"></i></div>
           <h3>Component Library</h3>
           <p>Reusable design components — buttons, inputs, cards, modals — organised for your developers to reference.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid palette"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-palette"></i></div>
           <h3>Style Guide</h3>
           <p>Colours, typography, spacing, and usage rules documented so the design stays consistent at scale.</p>
         </div>
         <div class="include-card reveal">
-          <div class="include-icon"><i class="fa-solid file-export"></i></div>
+          <div class="include-icon"><i class="fa-solid fa-file-export"></i></div>
           <h3>Developer Handover</h3>
           <p>Fully organised Figma file with exported assets, annotated specs, and a walkthrough on delivery.</p>
         </div>
@@ -140,43 +153,49 @@
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <div class="process-step-number">01</div>
+          <div class="process-step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">01</span>
             <h3 class="process-step-title">Brief & Discovery</h3>
             <p class="process-step-desc">We talk through your goals, users, and existing brand. What problem are we solving? What should this feel like to use?</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">02</div>
+          <div class="process-step-icon"><i class="fa-solid fa-chart-bar"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">02</span>
             <h3 class="process-step-title">Research & Planning</h3>
             <p class="process-step-desc">We study comparable products and user patterns, then plan the information architecture and user flows before touching Figma.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">03</div>
+          <div class="process-step-icon"><i class="fa-solid fa-object-group"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">03</span>
             <h3 class="process-step-title">Wireframes</h3>
             <p class="process-step-desc">Low-fidelity wireframes establish layout and structure. You review and give feedback before we invest time in visual design.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">04</div>
+          <div class="process-step-icon"><i class="fa-solid fa-palette"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">04</span>
             <h3 class="process-step-title">Visual Design</h3>
             <p class="process-step-desc">We apply your brand identity — color, typography, depth — and turn wireframes into full high-fidelity screens.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">05</div>
+          <div class="process-step-icon"><i class="fa-solid fa-mobile-screen"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">05</span>
             <h3 class="process-step-title">Prototype & Review</h3>
             <p class="process-step-desc">An interactive prototype lets you experience the design as a user would. You give feedback and we work through revision rounds.</p>
           </div>
         </div>
         <div class="process-step reveal">
-          <div class="process-step-number">06</div>
+          <div class="process-step-icon"><i class="fa-solid fa-file-export"></i></div>
           <div class="process-step-content">
+            <span class="process-step-label">06</span>
             <h3 class="process-step-title">Handover</h3>
             <p class="process-step-desc">We deliver the final organised Figma file with component library, style guide, and exported assets — ready for developers.</p>
           </div>
@@ -276,10 +295,10 @@
           <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
           <div class="faq-inline">
             <p class="faq-inline-label font-code">// faq</p>
-                        <details class="faq-item"><summary class="faq-question">Do you design for mobile and desktop? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. All designs are mobile-first, then scaled up to tablet and desktop.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">What tools do you use? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>We design in Figma. You'll receive a fully organised Figma file with components, styles, and a prototype.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can you design for an existing brand? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Share your brand guidelines, colours, and fonts and we'll design within them.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can the design be handed off to developers? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. The Figma file includes developer-ready specs, exportable assets, and a component library.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Do you design for mobile and desktop? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. All designs are mobile-first, then scaled up to tablet and desktop.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">What tools do you use? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>We design in Figma. You'll receive a fully organised Figma file with components, styles, and a prototype.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can you design for an existing brand? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. Share your brand guidelines, colours, and fonts and we'll design within them.</p></div></details>
+                        <details class="faq-item"><summary class="faq-question">Can the design be handed off to developers? <i class="fa-solid fa-chevron-down fa-faq-icon"></i></summary><div class="faq-answer"><p>Yes. The Figma file includes developer-ready specs, exportable assets, and a component library.</p></div></details>
           </div>
         </div>
         <div class="contact-form reveal reveal-delay-2">
