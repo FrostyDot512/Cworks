@@ -34,13 +34,12 @@
     .include-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
     .include-card:hover{border-color:rgba(224,122,95,.3);transform:translateY(-4px);background:var(--bg-card-h);box-shadow:0 16px 40px rgba(0,0,0,.2)}
     .include-card:hover::before{opacity:1}
-    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s var(--ease),box-shadow .3s}
+    .include-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.1rem;margin-bottom:1.1rem;transition:transform .3s,box-shadow .3s}
     .include-card:hover .include-icon{transform:scale(1.12) rotate(-4deg);box-shadow:0 0 20px rgba(224,122,95,.25)}
     .include-card h3{font-size:.97rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem;color:var(--text)}
     .include-card p{font-size:.82rem;color:var(--text-muted);line-height:1.7}
-    /* Process steps */
     .process-steps{display:flex;flex-direction:column;gap:0}
-    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s var(--ease),background .2s}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:1.75rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:padding-left .3s}
     .process-step:last-child{border-bottom:none}
     .process-step:hover{padding-left:8px}
     .process-step-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--accent-low);border:1px solid var(--accent-glow);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;flex-shrink:0;transition:box-shadow .3s,transform .3s}
@@ -87,7 +86,7 @@
     </div>
     <div class="service-hero-content">
       <a href="index.html" class="service-hero-back reveal"><i class="fa-solid fa-arrow-left fa-xs"></i> Back to CWORKS</a>
-      <div class="service-hero-eyebrow reveal"><i class="fa-solid globe fa-xs"></i><span>Website Development</span></div>
+      <div class="service-hero-eyebrow reveal"><i class="fa-solid fa-globe fa-xs"></i><span>Website Development</span></div>
       <h1 class="service-hero-title reveal">Clean, Fast Websites<br/>That <em>Actually Work</em></h1>
       <p class="service-hero-sub reveal">We build fully responsive, modern websites for businesses, brands, and individuals across Uganda — from first conversation to live on the web.</p>
       <div class="service-hero-actions reveal">
@@ -95,10 +94,10 @@
         <a href="#contact" class="btn-secondary mag-btn"><span>Start a Project</span></a>
       </div>
       <div class="service-hero-meta reveal">
-        <div class="meta-item"><i class="fa-solid clock"></i><span>From <strong>1 week</strong> delivery</span></div>
-        <div class="meta-item"><i class="fa-solid coins"></i><span>From <strong>UGX 350,000</strong></span></div>
-        <div class="meta-item"><i class="fa-solid mobile-screen"></i><span><strong>Mobile-first</strong> always</span></div>
-        <div class="meta-item"><i class="fa-solid server"></i><span><strong>3 months</strong> free hosting</span></div>
+        <div class="meta-item"><i class="fa-solid fa-clock"></i><span>From <strong>1 week</strong> delivery</span></div>
+        <div class="meta-item"><i class="fa-solid fa-coins"></i><span>From <strong>UGX 350,000</strong></span></div>
+        <div class="meta-item"><i class="fa-solid fa-mobile-screen"></i><span><strong>Mobile-first</strong> always</span></div>
+        <div class="meta-item"><i class="fa-solid fa-server"></i><span><strong>3 months</strong> free hosting</span></div>
       </div>
     </div>
   </section>
@@ -299,58 +298,139 @@
         <p class="font-code" style="color:var(--text-muted);font-size:.75rem;text-align:center;margin-top:1.5rem;">All prices in UGX. 50% deposit to begin, balance due on launch. Hosting is free for the first 3 months &#8212; after that, billed monthly via Mobile Money.</p>
       </div>
     </div>
-  </section>  <section class="section contact" id="contact" style="background:var(--bg-secondary);">
-    <div class="contact-bg" aria-hidden="true"><div class="contact-glow-1"></div><div class="contact-glow-2"></div></div>
+    </section>  <section class="section contact" id="contact">
+    <div class="contact-bg-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-header">
-        <span class="section-label reveal">// ready to start?</span>
-        <h2 class="section-title reveal">Let's Talk About<br/><em>Your Project</em></h2>
-        <p class="section-description reveal">Tell us what you need and we'll get back to you within 24 hours.</p>
-        <span class="accent-line reveal"></span>
+
+      <div class="section-header" data-reveal>
+        <div class="section-label"><span class="lt">// READY TO BUILD?</span></div>
+        <h2 class="section-title">Let's Build Your<br/><em>Website</em></h2>
+        <p class="section-sub">Tell us about your project and we'll come back with a proposal.</p>
       </div>
-      <div class="contact-wrapper">
-        <div class="contact-info reveal">
-          <h3>Get in touch</h3>
-          <p>Tell us about your project — what you need, your timeline, and your budget. We'll come back to you with a proposal.</p>
-          <a href="https://www.instagram.com/thecodehub26/" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" style="color:#E1306C;"></i> Follow us on Instagram</a>
-          <a href="https://www.linkedin.com/company/codehub26/" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color:#0A66C2;"></i> Follow us on LinkedIn</a>
-          <a href="tel:+256788368997" class="contact-link"><i class="fa-solid fa-phone"></i> Call us: +256 788 368 997</a>
-          <a href="https://wa.me/256788368997" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Chat on WhatsApp</a>
-          <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="contact-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-star" style="color:#FBBC04;"></i> Leave us a Google Review</a>
-          <div class="faq-inline">
-            <p class="faq-inline-label font-code">// faq</p>
-                        <details class="faq-item"><summary class="faq-question">How long does a website take to build? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Starter sites take around 1 week, Standard 2&#8211;3 weeks, and Super timelines are agreed per project.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Do I need to provide the content? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. You provide your text, images, and branding assets. We can advise on structure and sourcing.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Can you update my existing site? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Share details about your current site and what you'd like changed and we'll assess and quote.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">What do I need to get started? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Just a rough idea of what you want, some sites you like the look of, and your budget.</p></div></details>
-                        <details class="faq-item"><summary class="faq-question">Do you offer ongoing maintenance? <i class="fa-solid fa-chevron-down faq-icon"></i></summary><div class="faq-answer"><p>Yes. Post-launch support is available for updates, fixes, and small changes on a retainer or case-by-case basis.</p></div></details>
+
+      <div class="contact-layout">
+
+        <!-- LEFT -->
+        <div class="contact-left" data-reveal>
+          <p class="contact-left-headline">Get in touch</p>
+          <p class="contact-left-sub">Tell us about your project — what you need, your timeline, and your budget. We'll come back to you with a proposal.</p>
+
+          <div class="clinks-list">
+            <a href="https://www.instagram.com/thecodehub26/" class="clink" target="_blank" rel="noopener noreferrer">
+              <span class="clink-ic" style="color:#E1306C"><i class="fa-brands fa-instagram"></i></span>
+              <span class="clink-txt">Instagram<span style="display:block;font-size:.72rem;color:var(--text-muted);font-weight:400;">@cworks26</span></span>
+              <i class="fa-solid fa-arrow-up-right clink-arr"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/codehub26/" class="clink" target="_blank" rel="noopener noreferrer">
+              <span class="clink-ic" style="color:#0A66C2"><i class="fa-brands fa-linkedin"></i></span>
+              <span class="clink-txt">LinkedIn<span style="display:block;font-size:.72rem;color:var(--text-muted);font-weight:400;">Cworks</span></span>
+              <i class="fa-solid fa-arrow-up-right clink-arr"></i>
+            </a>
+            <a href="tel:+256788368997" class="clink">
+              <span class="clink-ic"><i class="fa-solid fa-phone"></i></span>
+              <span class="clink-txt">Call Us<span style="display:block;font-size:.72rem;color:var(--text-muted);font-weight:400;">+256 788 368 997</span></span>
+              <i class="fa-solid fa-arrow-up-right clink-arr"></i>
+            </a>
+            <a href="https://wa.me/256788368997" class="clink" target="_blank" rel="noopener noreferrer">
+              <span class="clink-ic" style="color:#25D366"><i class="fa-brands fa-whatsapp"></i></span>
+              <span class="clink-txt">WhatsApp<span style="display:block;font-size:.72rem;color:var(--text-muted);font-weight:400;">Chat with us</span></span>
+              <i class="fa-solid fa-arrow-up-right clink-arr"></i>
+            </a>
+            <a href="https://g.page/r/CXH2-fsHKeH0EBM/review" class="clink" target="_blank" rel="noopener noreferrer">
+              <span class="clink-ic" style="color:#FBBC04"><i class="fa-solid fa-star"></i></span>
+              <span class="clink-txt">Google Review<span style="display:block;font-size:.72rem;color:var(--text-muted);font-weight:400;">Leave us a review</span></span>
+              <i class="fa-solid fa-arrow-up-right clink-arr"></i>
+            </a>
+          </div>
+
+          <div class="contact-avail">
+            <div class="avail-ring"></div>
+            <div>
+              <div class="avail-title">Currently Available</div>
+              <div class="avail-sub">We typically respond within 24 hours</div>
+            </div>
+          </div>
+
+          <div style="margin-top:2.5rem;">
+            <p style="font-size:.72rem;font-family:var(--font-mono);letter-spacing:.1em;color:var(--accent);margin-bottom:1rem;">// FAQ</p>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary class="faq-q">How long does a website take to build? <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <p class="faq-a">Starter sites take around 1 week. Standard builds take 2–3 weeks. Super sites are scoped per project — timeline agreed upfront.</p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">Do I need to provide the content? <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <p class="faq-a">Yes. You provide your text, images, and branding assets. We can advise on structure and sourcing if needed.</p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">Can you update my existing site? <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <p class="faq-a">Yes. Share details about your current site and what you'd like changed and we'll assess and quote.</p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">What do I need to get started? <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <p class="faq-a">Just a rough idea of what you want, some sites you like the look of, and your budget. We'll handle the rest.</p>
+              </details>
+              <details class="faq-item">
+                <summary class="faq-q">Do you offer ongoing maintenance? <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <p class="faq-a">Yes. Post-launch support is available for updates, fixes, and small changes on a retainer or case-by-case basis.</p>
+              </details>
+            </div>
           </div>
         </div>
-        <div class="contact-form reveal reveal-delay-2">
+
+        <!-- RIGHT: form -->
+        <div class="contact-form-wrap" data-reveal data-reveal-delay="1">
           <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="dd3dd29d-fc75-4ea5-b907-18526ad695c6"/>
             <input type="hidden" name="redirect" value="false"/>
             <input type="hidden" name="subject" value="Website Building Enquiry — CWORKS"/>
             <input type="hidden" name="from_name" value="CWORKS Website Building Page"/>
-            <div class="form-group"><label class="form-label" for="contact-name">Your Name</label><input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required/><span class="form-error" id="name-error"></span></div>
-            <div class="form-group"><label class="form-label" for="contact-email">Email Address</label><input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required/><span class="form-error" id="email-error"></span></div>
-            <div class="form-group"><label class="form-label" for="contact-phone">Phone Number</label><input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" required/><span class="form-error" id="phone-error"></span></div>
-            <div class="form-group">
-              <label class="form-label" for="contact-tier">Service Tier</label>
-              <select class="form-input form-select" id="contact-tier" name="tier" required>
+
+            <div class="form-row">
+              <div class="fg">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name" required/>
+                <span class="fe" id="name-error" aria-live="polite"></span>
+              </div>
+              <div class="fg">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" placeholder="your@email.com" autocomplete="email" required/>
+                <span class="fe" id="email-error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="fg">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+256 700 000 000" autocomplete="tel" required/>
+              <span class="fe" id="phone-error" aria-live="polite"></span>
+            </div>
+
+            <div class="fg">
+              <label for="contact-tier">Service Tier</label>
+              <select id="contact-tier" name="tier">
                 <option value="" disabled selected>Select a tier&#8230;</option>
                 <option value="Starter Site — UGX 350,000">Starter Site — UGX 350,000</option>
                 <option value="Standard Site — UGX 750,000">Standard Site — UGX 750,000</option>
                 <option value="Super Site — UGX 1,200,000">Super Site — UGX 1,200,000</option>
                 <option value="Consultation">Consultation &#8212; Let's discuss</option>
               </select>
-              <span class="form-error" id="tier-error"></span>
+              <span class="fe" id="tier-error" aria-live="polite"></span>
             </div>
-            <div class="form-group"><label class="form-label" for="contact-message">Tell us about your project</label><textarea class="form-textarea" id="contact-message" name="message" placeholder="Describe what you need&#8230;" rows="5"></textarea></div>
-            <div id="form-feedback" class="form-feedback" aria-live="polite" hidden></div>
-            <button type="submit" id="form-submit" class="btn-submit mag-btn"><i class="fa-solid fa-paper-plane fa-sm"></i><span>Send Enquiry</span></button>
+
+            <div class="fg">
+              <label for="contact-message">Tell us about your project</label>
+              <textarea id="contact-message" name="message" placeholder="What kind of site do you need? Any features in mind?" rows="5" required></textarea>
+            </div>
+
+            <div id="form-feedback" class="form-feedback" hidden></div>
+
+            <button type="submit" id="form-submit" class="btn-submit mag-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Send Enquiry</span>
+            </button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
