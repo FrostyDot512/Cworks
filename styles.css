@@ -565,8 +565,7 @@ ul  { list-style: none; }
 }
 .footer-brand { flex: 1; }
 .fl-row { display: flex; align-items: center; margin-bottom: .75rem; }
-.fl-row .footer-logo-img { height: 24px; width: auto; max-width: 110px; object-fit: contain; filter: brightness(1.1); }
-.footer-logo .footer-logo-img { height: 24px; width: auto; max-width: 110px; object-fit: contain; filter: brightness(1.1); }
+.fl-row .footer-logo-img { height: 32px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(1.1); }
 .footer-brand p { font-size: .82rem; color: var(--text-muted); margin-bottom: .2rem; }
 .footer-origin { color: var(--text-dim) !important; font-size: .76rem !important; }
 .footer nav ul { display: flex; flex-direction: column; gap: .5rem; }
@@ -815,13 +814,14 @@ details[open] .faq-q i { transform: rotate(180deg); }
 
 /* ps-top: number sits ABOVE the center line */
 .ps-top {
-  display: none;
+  margin-bottom: .6rem;
 }
 
 /* Icon sits ON the center line — positioned absolutely at the center */
 .ps-icon-wrap {
   position: absolute;
-  top: 0;
+  /* vertically center the icon at the line point */
+  top: 2rem; /* aligns with top of ps-top area */
   width: 44px; height: 44px; flex-shrink: 0;
   border-radius: var(--r-sm);
   background: var(--bg-card);
@@ -848,19 +848,16 @@ details[open] .faq-q i { transform: rotate(180deg); }
 .ps::before {
   content: '';
   position: absolute;
-  top: 0.6rem;
+  top: 2.6rem;
   height: 1px;
   opacity: 1;
 }
 .ps:nth-child(odd)::before  { right: 0; left: 35%; background: linear-gradient(90deg, transparent, rgba(224,122,95,.2)); }
 .ps:nth-child(even)::before { left: 0; right: 35%; background: linear-gradient(270deg, transparent, rgba(224,122,95,.2)); }
 
-.ps-body { width: 100%; margin-top: 1rem; }
+.ps-body { width: 100%; margin-top: 3.5rem; }
 .ps:nth-child(odd) .ps-body { text-align: right; }
 
-.process-grid {
-  counter-reset: process-step;
-}
 .ps-num {
   font-family: var(--font-mono);
   font-size: .65rem;
@@ -1234,8 +1231,7 @@ details[open] .faq-chevron {
   .ps:nth-child(odd) .ps-icon-wrap { left: 0; right: auto; }
   .ps:nth-child(even) .ps-icon-wrap { left: 0; }
   .ps-icon-wrap { position: absolute; top: 1.5rem; left: 0; }
-  .ps-top { display: none; }
-  .ps-body { margin-top: 1rem; }
+  .ps-body { margin-top: 2.5rem; }
   .ps:last-child { border-bottom: none; }
 
   .contact-layout { grid-template-columns: 1fr; }
