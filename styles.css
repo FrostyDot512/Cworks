@@ -173,6 +173,7 @@ ul  { list-style: none; }
 .hero-content {
   position: relative; z-index: 2;
   max-width: 1300px; margin: 0 auto; width: 100%;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: .6rem;
@@ -221,16 +222,16 @@ ul  { list-style: none; }
 }
 .hl-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 .hero-sub {
-  font-size: clamp(.95rem, 2vw, 1.15rem); color: var(--text-muted); max-width: 520px;
+  font-size: clamp(.95rem, 2vw, 1.15rem); color: var(--text-muted); max-width: 580px;
   line-height: 1.75; margin-bottom: 2.5rem;
   opacity: 0; animation: revUp .8s var(--ease) 1.05s forwards;
 }
 .hero-actions {
-  display: flex; align-items: center; gap: 1rem; margin-bottom: 3.5rem; flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3.5rem; flex-wrap: wrap;
   opacity: 0; animation: revUp .8s var(--ease) 1.2s forwards;
 }
 .hero-metrics {
-  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;
   opacity: 0; animation: revUp .8s var(--ease) 1.35s forwards;
 }
 .mn { display: block; font-size: 2rem; font-weight: 800; line-height: 1; color: var(--text); }
@@ -566,6 +567,7 @@ ul  { list-style: none; }
 .footer-brand { flex: 1; }
 .fl-row { display: flex; align-items: center; margin-bottom: .75rem; }
 .fl-row .footer-logo-img { height: 32px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(1.1); }
+.footer-logo .footer-logo-img { height: 32px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(1.1); }
 .footer-brand p { font-size: .82rem; color: var(--text-muted); margin-bottom: .2rem; }
 .footer-origin { color: var(--text-dim) !important; font-size: .76rem !important; }
 .footer nav ul { display: flex; flex-direction: column; gap: .5rem; }
@@ -739,7 +741,7 @@ details[open] .faq-q i { transform: rotate(180deg); }
 }
 @media (max-width: 500px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-actions { flex-direction: column; align-items: center; }
   .hero-metrics { flex-wrap: wrap; gap: 1rem; }
   .msep { display: none; }
   .sp-hero-cta { flex-direction: column; align-items: flex-start; }
